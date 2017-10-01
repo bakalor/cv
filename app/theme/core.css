@@ -1,0 +1,21 @@
+@import "normalize.css";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body,
+body > div {
+  width: 100%;
+  height: 100%;
+  background: #fafafa;
+}
+
+.root {
+  height: 100%;
+}
+
+* > * {
+  box-sizing: border-box;
+}
