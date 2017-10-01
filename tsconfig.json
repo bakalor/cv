@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "strict": true,
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2015.promise"
+    ],
+    "types": [
+      "react",
+      "react-dom",
+      "react-router",
+      "react-router-dom"
+    ],
+    "baseUrl": "./app"
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
