@@ -26,6 +26,17 @@ module.exports = {
         use: ["awesome-typescript-loader"]
       },
       {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 64000
+            }
+          }
+        ]
+      },
+      {
         test: /\.css$/,
         use: [
           "style-loader",
@@ -44,12 +55,6 @@ module.exports = {
       },
     ]
   },
-  
-  devServer: {
-    port: 4004,
-    contentBase: path.join(__dirname, 'dist'), // boolean | string | array, static file location
-  },
-
   plugins: [
     new HtmlPlugin({
       template: "./app/index.html"

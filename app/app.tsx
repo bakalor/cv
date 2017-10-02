@@ -4,10 +4,12 @@ import { withRouter, Switch, Redirect, Route } from "react-router";
 import { routing } from "./services/routing";
 import { Profile } from "./screens/profile/index";
 import { Sidebar } from "screens/components/side-bar";
+import { Header } from "screens/components/header";
 
 class AppClass extends React.PureComponent {
   render() {
     return <div className={core.root}>
+      <Header />
       <Sidebar />
 
       <Switch>
