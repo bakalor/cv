@@ -1,0 +1,21 @@
+{
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0,
+  "workbench.iconTheme": "vscode-icons",
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/*.svg": true
+  },
+  "gitlens.annotations.file.gutter.format": "${author?} ${ago|14-}",
+  "gitlens.annotations.file.gutter.compact": false,
+  "gitlens.annotations.file.gutter.heatmap.enabled": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/*.css.d.ts": true
+  },
+  "tslint.autoFixOnSave": true,
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}
