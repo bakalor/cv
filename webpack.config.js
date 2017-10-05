@@ -5,13 +5,17 @@ const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: "./app/bootstrap.tsx",
+    app: [
+      "./app/bootstrap.tsx",
+      "webpack-hot-middleware/client"
+    ],
     vandor: "./app/vendor.ts"
   },
 
   output: {
     path: path.join(__dirname, "dist"),
-    filename: "[name].js"
+    filename: "[name].js",
+    publicPath: "/"
   },
   resolve: {
     extensions: [".tsx", ".ts", ".css", ".js"],
@@ -55,7 +59,9 @@ module.exports = {
       },
     ]
   },
+
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       template: "./app/index.html"
     })
