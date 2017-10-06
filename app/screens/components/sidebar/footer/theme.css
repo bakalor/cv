@@ -1,0 +1,46 @@
+
+.footer {
+  height: 82px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+
+  & .text {
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: middle;
+    color: #757575;
+    padding-left: 22px;
+    margin-bottom: 7px;
+  }
+
+  & .links {
+    padding-left: 25px;
+    display: flex;
+
+    & .link {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 25px;
+      width: 25px;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 13px;
+      }
+
+      &.github {
+        border-radius: 50%;
+        background-image: url(./icons/github.svg);
+      }
+
+      &.linkedin {
+        border-radius: 4px;
+        background-image: url(./icons/linkedin.svg);
+      }
+    }
+  }
+}

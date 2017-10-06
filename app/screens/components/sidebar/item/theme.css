@@ -1,0 +1,44 @@
+.item,
+.child {
+  color: #212121;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: #eee;
+  }
+
+  & .title {
+    font-size: 14px;
+    text-transform: capitalize;
+    line-height: 15px;
+  }
+
+  & .icon {
+    margin-right: 9px;
+
+    &.tool {
+      width: 15px;
+      height: 15px;
+      margin-bottom: 1px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url(./../icons/tool.svg);
+    }
+  }
+}
+
+.item {
+  font-weight: bold;
+  height: 46px;
+  padding-left: 22px;
+}
+
+.child {
+  height: 33px;
+  padding-left: 46px;
+
+  & .title {
+  }
+}
+

@@ -1,0 +1,23 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 256px;
+  height: 100%;
+  background: #fff;
+  color: #212121;
+  border-right: 1px solid rgba(0, 0, 0, .14);
+  z-index: 2;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.list {
+  padding: 12px 0 0 0;
+}

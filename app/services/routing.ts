@@ -43,12 +43,15 @@ export const buildRoutingMap = (menuItem: RoutingLeafNode, child: RoutingNode) =
   }
 };
 
-/**
- * Application menu structure
- */
 export const routing = {
   _index: new RoutingLeafNode("/", "cv"),
-  profile: new RoutingLeafNode("profile", "Profile")
+  profile: new RoutingLeafNode("profile", "profile"),
+  stack: {
+    _index: new RoutingLeafNode("stack", "stack"),
+    technologies: new RoutingLeafNode("technologies", "technologies"),
+    tools: new RoutingLeafNode("tools", "tools")
+  },
+  projects: new RoutingLeafNode("projects", "projects")
 };
 
 buildRoutingMap(routing._index, routing);

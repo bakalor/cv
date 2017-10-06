@@ -1,9 +1,7 @@
 import * as React from "react";
 import * as core from "./theme/core.css";
-import { withRouter, Switch, Redirect, Route } from "react-router";
-import { routing } from "./services/routing";
-import { Profile } from "./screens/profile/index";
-import { Sidebar } from "screens/components/side-bar";
+import { withRouter, Switch,  } from "react-router";
+import { Sidebar } from "screens/components/sidebar";
 import { Header } from "screens/components/header";
 
 class AppClass extends React.PureComponent {
@@ -13,8 +11,6 @@ class AppClass extends React.PureComponent {
       <Sidebar />
 
       <Switch>
-        <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact />
-        <Route path={routing.profile.fullpath} component={Profile} />
       </Switch>
     </div>
   }
