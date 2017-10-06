@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "run-p start:*",
-    "start:server": "nodemon --nolazy --watch app ./server/index.js",
+    "start:server": "nodemon --nolazy --watch src ./src/server/index.js",
     "start:client": "webpack -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -43,6 +43,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "style-loader": "^0.18.2",
+    "tslint": "^5.7.0",
     "typed-css-modules-loader": "0.0.11",
     "typescript": "^2.5.3",
     "typings-for-css-modules-loader": "^1.6.1",

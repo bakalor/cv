@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as core from "./theme/core.css";
 import { withRouter, Switch,  } from "react-router";
-import { Sidebar } from "screens/components/sidebar";
-import { Header } from "screens/components/header";
+import { Sidebar } from "scenes/components/sidebar";
+import { Header } from "scenes/components/header";
 
 class AppClass extends React.PureComponent {
   render() {

@@ -6,10 +6,10 @@ const HtmlPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: [
-      "./app/bootstrap.tsx",
+      "./src/bootstrap.tsx",
       "webpack-hot-middleware/client"
     ],
-    vandor: "./app/vendor.ts"
+    vandor: "./src/vendor.ts"
   },
 
   output: {
@@ -65,7 +65,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
-      template: "./app/index.html"
+      template: "./src/index.html"
     })
   ]
 }

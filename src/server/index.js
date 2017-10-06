@@ -7,7 +7,7 @@ const DEFAULT_PORT = 4000;
 app.use(express.static(path.resolve("./dist")))
 
 const webpack = require('webpack');
-const webpackConfig = require('../webpack.config');
+const webpackConfig = require('../../webpack.config');
 const compiler = webpack(webpackConfig);
 
 app.use(require("webpack-dev-middleware")(compiler, {

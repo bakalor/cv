@@ -1,10 +1,10 @@
 import * as React from "react";
 import * as css from "./theme.css";
 // import * as cn from "classnames";
-import { SideBarHeader } from "screens/components/sidebar/header";
+import { SideBarHeader } from "scenes/components/sidebar/header";
 import { routing } from "services/routing";
-import { SidebarItem } from "screens/components/sidebar/item";
-import { SideBarFooter } from "screens/components/sidebar/footer";
+import { SidebarItem } from "scenes/components/sidebar/item";
+import { SideBarFooter } from "scenes/components/sidebar/footer";
 
 export class Sidebar extends React.PureComponent {
   render() {
