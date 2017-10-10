@@ -6,6 +6,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     app: [
+      "react-hot-loader/patch",
       "./src/bootstrap.tsx",
       "webpack-hot-middleware/client"
     ],
@@ -27,7 +28,10 @@ module.exports = {
     rules: [
       {
         test: /\.ts(x?)$/,
-        use: ["awesome-typescript-loader"]
+        use: [
+          "react-hot-loader/webpack",
+          "awesome-typescript-loader"
+        ]
       },
       {
         test: /\.svg$/,
@@ -61,7 +65,7 @@ module.exports = {
   },
 
   devtool: 'cheap-module-source-map',
-  
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
