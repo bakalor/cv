@@ -1,19 +1,26 @@
 import * as React from "react";
 import * as core from "./theme/core.css";
-import { withRouter, Switch,  } from "react-router";
+import { withRouter, Switch, RouteComponentProps, Route, Redirect, } from "react-router";
 import { Sidebar } from "scenes/components/sidebar";
 import { Header } from "scenes/components/header";
+import { routing } from "services/routing";
+import { Profile } from "scenes/profile";
+import { Stack } from "scenes/stack";
 
-class AppClass extends React.PureComponent {
+class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
   render() {
     return <div className={core.root}>
       <Header />
-      <Sidebar />
+
+      <Sidebar {...this.props} />
 
       <Switch>
+        <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact={true} />
+        <Route path={routing.profile.fullpath} component={Profile} />
+        <Route path={routing.stack._index.fullpath} component={Stack} />
       </Switch>
-    </div>
+    </div>;
   }
 }
 
-export const App = withRouter(AppClass)
+export const App = withRouter(AppClass);

@@ -1,5 +1,5 @@
-.item,
-.child {
+.link,
+.sub-link {
   color: #212121;
   display: flex;
   align-items: center;
@@ -13,32 +13,19 @@
     text-transform: capitalize;
     line-height: 15px;
   }
-
-  & .icon {
-    margin-right: 9px;
-
-    &.tool {
-      width: 15px;
-      height: 15px;
-      margin-bottom: 1px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url(./../icons/tool.svg);
-    }
-  }
 }
 
-.item {
+.link {
   font-weight: bold;
   height: 46px;
   padding-left: 22px;
 }
 
-.child {
+.sub-link {
   height: 33px;
   padding-left: 46px;
-
-  & .title {
-  }
 }
 
+.active {
+  background-color: #eee;
+}

@@ -1,6 +1,5 @@
-export class RoutingLeafNode {
-  children: RoutingLeafNode[] = [];
-  title: string;
+export class RoutingNodeDescriptor {
+  children: RoutingNodeDescriptor[] = [];
 
   private _fullpath: string;
 
@@ -8,34 +7,33 @@ export class RoutingLeafNode {
     return this._fullpath;
   }
 
-  constructor(public path: string, title: string) {
+  constructor(public path: string) {
     this._fullpath = path;
-    this.title = title;
   }
 
-  addChildNode(child: RoutingLeafNode) {
+  addChildNode(child: RoutingNodeDescriptor) {
     this.children.push(child);
     child._fullpath = `${this._fullpath !== "/" ? this._fullpath : ""}/${child.path}`;
   }
 }
 
-export type RoutingNode = RoutingLeafNode | {
-  _index: RoutingLeafNode;
-  [key: string]: RoutingNode | RoutingLeafNode;
+export type RoutingDslNode = RoutingNodeDescriptor | {
+  _index: RoutingNodeDescriptor;
+  [key: string]: RoutingDslNode | RoutingNodeDescriptor;
 };
 
-export const buildRoutingMap = (menuItem: RoutingLeafNode, child: RoutingNode) => {
+export const buildRoutingMap = (actualRoot: RoutingNodeDescriptor, actualDslRoot: RoutingDslNode) => {
 
-  if (!(child instanceof RoutingLeafNode)) {
-    for (const key in child) {
+  if (!(actualDslRoot instanceof RoutingNodeDescriptor)) {
+    for (const key in actualDslRoot) {
       if (key !== "_index") {
-        const childItem = child[key];
+        const childItem = actualDslRoot[key];
 
-        if (childItem instanceof RoutingLeafNode) {
-          menuItem.addChildNode(childItem);
+        if (childItem instanceof RoutingNodeDescriptor) {
+          actualRoot.addChildNode(childItem);
         }
         else {
-          menuItem.addChildNode(childItem._index);
+          actualRoot.addChildNode(childItem._index);
           buildRoutingMap(childItem._index, childItem);
         }
       }
@@ -44,14 +42,14 @@ export const buildRoutingMap = (menuItem: RoutingLeafNode, child: RoutingNode) =
 };
 
 export const routing = {
-  _index: new RoutingLeafNode("/", "cv"),
-  profile: new RoutingLeafNode("profile", "profile"),
+  _index: new RoutingNodeDescriptor("/"),
+  profile: new RoutingNodeDescriptor("profile"),
   stack: {
-    _index: new RoutingLeafNode("stack", "stack"),
-    technologies: new RoutingLeafNode("technologies", "technologies"),
-    tools: new RoutingLeafNode("tools", "tools")
+    _index: new RoutingNodeDescriptor("stack"),
+    technologies: new RoutingNodeDescriptor("technologies"),
+    tools: new RoutingNodeDescriptor("tools")
   },
-  projects: new RoutingLeafNode("projects", "projects")
+  projects: new RoutingNodeDescriptor("projects")
 };
 
 buildRoutingMap(routing._index, routing);

@@ -21,3 +21,22 @@
 .list {
   padding: 12px 0 0 0;
 }
+
+.icon {
+  margin-right: 9px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 15px;
+  height: 15px;
+
+  &.tools {
+    margin-bottom: 1px;
+    background-image: url(./icons/tools.svg);
+  }
+
+  &.profile {
+    margin-bottom: 4px;
+    background-image: url(./icons/profile.svg);
+  }
+}
+

@@ -1,40 +1,52 @@
 import * as React from "react";
 import * as css from "./theme.css";
-import * as cn from "classnames";
-import { RoutingLeafNode } from "services/routing";
+import { RoutingNodeDescriptor } from "services/routing";
+import { NavLink } from "react-router-dom";
+import { RouteComponentProps } from "react-router";
+import { getTitleForRoute, getIconForRoute } from "scenes/components/sidebar/service";
+
 
 interface PassedProps {
-  route: RoutingLeafNode;
+  route: RoutingNodeDescriptor;
 }
 
 interface State {
   collapsed: boolean;
 }
 
-export class SidebarItem extends React.Component<PassedProps, State> {
+export class SidebarItem extends React.Component<PassedProps & RouteComponentProps<{}>, State> {
 
-  constructor(props: PassedProps) {
+  constructor(props: any) {
     super(props);
-    this.state = { collapsed: true }
+    this.state = { collapsed: true };
   }
 
   render() {
     const route = this.props.route;
     return <div>
-      <div className={css.item}
-        onClick={() => this.toggleCollapse()}>
-        <div className={cn(css.icon, css.tool)}></div>
-        <div className={css.title}>{route.title}</div>
-      </div>
+      <NavLink
+        onClick={() => this.toggleCollapse()}
+        className={css.link}
+        activeClassName={css.active}
+        to={route.fullpath}
+        exact={true}>
+        {getIconForRoute(route)}
+        {getTitleForRoute(route)}
+      </NavLink>
+
 
       {!this.state.collapsed
         ? route.children.map(subRoute =>
-          <div className={css.child} key={subRoute.fullpath}>
-            <div className={cn(css.icon, css.tool)}></div>
-            <div className={css.title}>{subRoute.title}</div>
-          </div>)
+          <NavLink
+            key={route.fullpath}
+            className={css.subLink}
+            activeClassName={css.active}
+            to={subRoute.fullpath}>
+            {getIconForRoute(subRoute)}
+            {getTitleForRoute(subRoute)}
+          </NavLink>)
         : null}
-    </div>
+    </div>;
   }
 
   private toggleCollapse = () => this.setState({ collapsed: !this.state.collapsed });
