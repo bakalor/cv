@@ -34,6 +34,7 @@
     "@types/react-router": "^4.0.15",
     "@types/react-router-dom": "^4.0.8",
     "awesome-typescript-loader": "^3.2.3",
+    "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
     "express": "^4.16.1",
     "html-webpack-plugin": "^2.30.1",

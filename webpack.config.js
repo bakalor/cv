@@ -1,6 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
       "./src/bootstrap.tsx",
       "webpack-hot-middleware/client"
     ],
-    vandor: "./src/vendor.ts"
+    vendor: "./src/vendor.ts"
   },
 
   output: {
@@ -70,6 +71,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       template: "./src/index.html"
-    })
+    }),
+    new CleanWebpackPlugin("./dist")
   ]
 }
