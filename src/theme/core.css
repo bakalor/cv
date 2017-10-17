@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "reset-styles";
+@import "fonts/index.css";
 
 html {
   width: 100%;
@@ -15,6 +16,7 @@ body > div {
 
 .root {
   height: 100%;
+  font-family: "Open Sans"
 }
 
 * > * {
