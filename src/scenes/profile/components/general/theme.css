@@ -3,9 +3,11 @@
 
 .card {
   @mixin card;
+  display: flex;
   height: 540px;
   width: 960px;
-  padding: 24px 16px;
+  padding: 24px;
+  justify-content: space-between;
 }
 
 .general-info {
@@ -43,4 +45,16 @@
       font-weight: bold;
     }
   }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.pie-placeholder {
+  width: 400px;
+  height: 400px;
+  border-radius: 4px;;
+  background: #efebe9;
 }

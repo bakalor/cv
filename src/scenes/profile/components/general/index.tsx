@@ -33,16 +33,21 @@ const _stats: StatItem[] = [
 export class GeneralInfoCard extends React.PureComponent {
   render() {
     return <div className={theme.card}>
-      <div className={theme.generalInfo}>
-        <div className={theme.photo}></div>
-        <div className={theme.generalStats}>
-          {_stats.map(stat =>
-            <div className={theme.item}>
-              <div className={theme.name}>{stat.name}</div>
-              <div className={theme.value}>{stat.value}</div>
-            </div>
-          )}
+      <div className={theme.col}>
+        <div className={theme.generalInfo}>
+          <div className={theme.photo}></div>
+          <div className={theme.generalStats}>
+            {_stats.map(stat =>
+              <div className={theme.item}>
+                <div className={theme.name}>{stat.name}</div>
+                <div className={theme.value}>{stat.value}</div>
+              </div>
+            )}
+          </div>
         </div>
+      </div>
+      <div className={theme.col}>
+      <div className={theme.piePlaceholder}></div>
       </div>
     </div>;
   }
