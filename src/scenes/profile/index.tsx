@@ -4,7 +4,6 @@ import * as cn from "classnames";
 import { GeneralInfoCard } from "scenes/profile/components/general";
 import { ProjectCard } from "scenes/profile/components/project-card";
 import { JobHistory } from "scenes/profile/components/job-history";
-import { ScrollbarsAdapter } from "scenes/components/scrollbars-adapter";
 
 export class Profile extends React.PureComponent {
   render() {
@@ -18,14 +17,12 @@ export class Profile extends React.PureComponent {
             <JobHistory />
           </div>
         </div>
+        <div className={theme.title}>Sample projects list</div>
         <div className={cn(theme.row, theme.projects)}>
-          <ScrollbarsAdapter horizontal={true} className={theme.scroll}>
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
             <ProjectCard />
-            <ProjectCard />
-          </ScrollbarsAdapter>
         </div>
       </div>
     </div>;
