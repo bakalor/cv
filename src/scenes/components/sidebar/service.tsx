@@ -1,6 +1,6 @@
 import { RoutingNodeDescriptor, routing } from "services/routing";
 import * as React from "react";
-import * as css from "./theme.css";
+import * as theme from "./theme.css";
 import * as cn from "classnames";
 
 const routeToSidebarTitle = new Map<RoutingNodeDescriptor, React.ReactNode>([
@@ -9,8 +9,8 @@ const routeToSidebarTitle = new Map<RoutingNodeDescriptor, React.ReactNode>([
 ]);
 
 const routeToSidebarIcon = new Map<RoutingNodeDescriptor, React.ReactNode>([
-  [routing.profile, <div className={cn(css.icon, css.profile)}></div>],
-  [routing.stack, <div className={cn(css.icon, css.stack)}></div>],
+  [routing.profile, <div className={cn(theme.icon, theme.profile)}></div>],
+  [routing.stack, <div className={cn(theme.icon, theme.stack)}></div>],
 ]);
 
 export const getTitleForRoute = (route: RoutingNodeDescriptor): React.ReactNode => routeToSidebarTitle.get(route);

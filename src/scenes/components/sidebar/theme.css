@@ -38,5 +38,12 @@
     margin-bottom: 4px;
     background-image: url(./icons/profile.svg);
   }
+
+  &.stack {
+    height: 19px;
+    width: 19px;
+    margin-bottom: 1px;
+    background-image: url(./icons/stack.svg);
+  }
 }
 
