@@ -1,5 +1,0 @@
-/* todo find out why relative import fails */
-@font-face {
- font-family: "Open Sans";
- src: url("theme/fonts/open-sans.ttf") format("ttf");
-}

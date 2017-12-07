@@ -44,12 +44,7 @@ export const buildRoutingMap = (actualRoot: RoutingNodeDescriptor, actualDslRoot
 export const routing = {
   _index: new RoutingNodeDescriptor("/"),
   profile: new RoutingNodeDescriptor("profile"),
-  stack: {
-    _index: new RoutingNodeDescriptor("stack"),
-    technologies: new RoutingNodeDescriptor("technologies"),
-    tools: new RoutingNodeDescriptor("tools")
-  },
-  projects: new RoutingNodeDescriptor("projects")
+  stack: new RoutingNodeDescriptor("stack")
 };
 
 buildRoutingMap(routing._index, routing);

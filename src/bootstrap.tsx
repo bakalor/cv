@@ -17,8 +17,8 @@ render(App)
 declare var module: any;
 
 if (module.hot) {
-  module.hot.accept('./app.tsx', () => {
-    const AppComponent = require('./app.tsx').App;
+  module.hot.accept("./app.tsx", () => {
+    const AppComponent = require("./app.tsx").App;
     render(AppComponent);
   })
 }

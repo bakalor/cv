@@ -1,26 +1,31 @@
 import * as React from "react";
 import * as theme from "./theme.css";
+import * as cn from "classnames";
+import { GeneralInfoCard } from "scenes/profile/components/general";
+import { ProjectCard } from "scenes/profile/components/project-card";
+import { JobHistory } from "scenes/profile/components/job-history";
+import { ScrollbarsAdapter } from "scenes/components/scrollbars-adapter";
 
 export class Profile extends React.PureComponent {
   render() {
     return <div className={theme.wrapper}>
-      <div className={theme.card}>
-        <div className={theme.generalInfo}>
-          <div className={theme.photo}></div>
-          <div className={theme.generalStats}>
-            <div className={theme.item}>
-              <div className={theme.name}>First name</div>
-              <div className={theme.value}>Andrii</div>
-            </div>
-            <div className={theme.item}>
-              <div className={theme.name}>Last name</div>
-              <div className={theme.value}>Lavrov</div>
-            </div>
-            <div className={theme.item}>
-              <div className={theme.name}>Age</div>
-              <div className={theme.value}>21</div>
-            </div>
+      <div className={theme.grid}>
+        <div className={theme.row}>
+          <div className={theme.general}>
+            <GeneralInfoCard />
           </div>
+          <div className={theme.jobHistory}>
+            <JobHistory />
+          </div>
+        </div>
+        <div className={cn(theme.row, theme.projects)}>
+          <ScrollbarsAdapter horizontal={true} className={theme.scroll}>
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+            <ProjectCard />
+          </ScrollbarsAdapter>
         </div>
       </div>
     </div>;

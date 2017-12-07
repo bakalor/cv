@@ -1,10 +1,15 @@
 @define-mixin with-sidebar {
   margin: 64px 0 0 256px;
+  /** 
+  * Workaround.
+  * Investigate why margin on child elems does not work if padding-top is not explicitly specified
+  */
+  padding-top: 1px;
 }
 
 @define-mixin card {
   background-color: white;
   border-radius: 2px;
   border: 1px solid #e5e5e5;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.24);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
 }

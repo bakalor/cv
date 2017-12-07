@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as core from "./theme/core.css";
-import { withRouter, Switch, RouteComponentProps, Route, Redirect, } from "react-router";
+import { withRouter,  RouteComponentProps, Switch, Route, Redirect, } from "react-router";
 import { Sidebar } from "scenes/components/sidebar";
 import { Header } from "scenes/components/header";
 import { routing } from "services/routing";
@@ -17,7 +17,7 @@ class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
       <Switch>
         <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact={true} />
         <Route path={routing.profile.fullpath} component={Profile} />
-        <Route path={routing.stack._index.fullpath} component={Stack} />
+        <Route path={routing.stack.fullpath} component={Stack} />
       </Switch>
     </div>;
   }

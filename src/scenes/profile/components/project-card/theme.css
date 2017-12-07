@@ -1,0 +1,19 @@
+@import "mixins/layout";
+@import "mixins/lists";
+
+.card {
+  @mixin card;
+  height: 300px;
+  min-width: 300px;
+  margin-right: 30px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.header {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 12px 24px;
+  height: 60px;
+}

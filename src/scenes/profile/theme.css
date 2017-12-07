@@ -3,49 +3,45 @@
 
 .wrapper {
   @mixin with-sidebar;
-  padding: 48px 72px;
+  min-height: 900px;
 }
 
-.card {
-  @mixin card;
-  height: 540px;
-  width: 960px;
-  padding: 24px 16px;
+.general {
+  margin-right: 40px;
 }
-
-.general-info {
+.job-history {
+  min-width: 400px;
+}
+.grid {
   display: flex;
-}
+  flex-direction: column;
+  margin: 48px 72px;
+  max-width: 1400px;
+  width: 1400px;
 
-.photo {
-  height: 200px;
-  width: 200px;
-  background: #efebe9;
-  border-radius: 4px;
-  margin-right: 20px;
-}
-
-.general-stats {
-  width: 263px;
-
-  & .item {
-    @mixin stripped;
+  & .row {
     display: flex;
-    justify-content: space-between;
-    height: 33px;
-    line-height: 33px;
-    vertical-align: middle;
-    padding: 0 8px;
-    font-size: 14px;
+    margin-bottom: 40px;
+    width: 100%;
 
-    & .name {
-      font-size: 16px;
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    & .value {
-      font-size: 14px;
-      text-transform: uppercase;
-      font-weight: bold;
+    &:first-child {
+      flex-grow: 1;
     }
+  }
+}
+
+.projects {
+  display: flex;
+  padding: 10px 0;  
+}
+
+.scroll {
+  & > div {
+    display: flex;
+    flex-direction: row;
   }
 }
