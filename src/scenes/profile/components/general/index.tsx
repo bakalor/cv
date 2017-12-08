@@ -121,8 +121,8 @@ export class GeneralInfoCard extends React.PureComponent {
         <div className={theme.generalInfo}>
           <div className={theme.photo}></div>
           <div className={theme.generalStats}>
-            {_stats.map(stat =>
-              <div className={theme.item}>
+            {_stats.map((stat, index) =>
+              <div key={index} className={theme.item}>
                 <div className={theme.name}>{stat.name}</div>
                 <div className={theme.value}>{stat.value}</div>
               </div>
@@ -130,8 +130,8 @@ export class GeneralInfoCard extends React.PureComponent {
           </div>
         </div>
         <div className={theme.additionalInfo}>
-          {_additionalStats.map(stat =>
-            <div className={theme.item}>
+          {_additionalStats.map((stat, index) =>
+            <div key={index} className={theme.item}>
               <div className={theme.name}>{stat.name}</div>
               <div className={theme.value}>{stat.value}</div>
             </div>

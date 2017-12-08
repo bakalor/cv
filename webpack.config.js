@@ -35,7 +35,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.svg$|.ttf$/,
+        test: /\.svg$|.jpg$|.ttf$/,
         use: [
           {
             loader: "url-loader",
@@ -73,7 +73,9 @@ module.exports = {
       template: "./src/index.html"
     }),
     new webpack.ProvidePlugin({
-      d3: "d3"
+      d3: "d3",
+      "window.d3": "d3",
+
     }),
     new CleanWebpackPlugin("./dist")
   ]

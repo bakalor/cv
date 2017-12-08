@@ -13,7 +13,7 @@ export class Sidebar extends React.PureComponent<RouteComponentProps<{}>> {
         <SideBarHeader />
 
         <div className={css.list}>
-          {routing._index.children.map(route => <SidebarItem route={route} {...this.props} />)}
+          {routing._index.children.map((route, index) => <SidebarItem key={index} route={route} {...this.props} />)}
         </div>
 
         <SideBarFooter />
