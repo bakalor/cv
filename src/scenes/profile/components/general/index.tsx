@@ -1,8 +1,6 @@
 import * as React from "react";
 import * as theme from "./theme.css";
-
-import * as cn from "classnames";
-import { createPreconfiguredPie } from "scenes/profile/components/general/pie";
+import { Pie } from "scenes/profile/components/general/pie";
 
 interface StatItem {
   name: string;
@@ -55,13 +53,6 @@ const _additionalStats: StatItem[] = [
 
 export class GeneralInfoCard extends React.PureComponent {
 
-  private _chart: HTMLDivElement;
-  private _pie: d3pie.ID3PieChart;
-
-  componentDidMount() {
-    this._pie = createPreconfiguredPie(this._chart);
-  }
-
   render() {
     return <div className={theme.card}>
       <div className={theme.col}>
@@ -86,34 +77,7 @@ export class GeneralInfoCard extends React.PureComponent {
         </div>
       </div>
       <div className={theme.col}>
-        <div className={theme.chartTitle}>Programmer type chart</div>
-        <div
-          className={theme.piePlaceholder}
-          ref={r => this._chart = r!}>
-        </div>
-        <div className={theme.legend}>
-          <div className={theme.col}>
-            <div className={theme.val}>
-              <div className={cn(theme.icon, theme.linear)} />
-              <div className={theme.name}>Linear Programmer</div>
-            </div>
-            <div className={theme.val}>
-              <div className={cn(theme.icon, theme.dealer)} />
-              <div className={theme.name}>Dealer</div>
-            </div>
-          </div>
-          <div className={theme.col}>
-            <div className={theme.val}>
-              <div className={cn(theme.icon, theme.bussines)} />
-              <div className={theme.name}>Business Bullshitter</div>
-            </div>
-            <div className={theme.val}>
-              <div className={cn(theme.icon, theme.rockstar)} />
-              <div className={theme.name}>Rockstar</div>
-            </div>
-          </div>
-        </div>
-
+        <Pie />
         <div className={theme.chartDesc}>
           <div className={theme.icon}></div>
           To read about this chart please visit this article:{<br />}
