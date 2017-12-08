@@ -72,6 +72,9 @@ module.exports = {
     new HtmlPlugin({
       template: "./src/index.html"
     }),
+    new webpack.ProvidePlugin({
+      d3: "d3"
+    }),
     new CleanWebpackPlugin("./dist")
   ]
 }

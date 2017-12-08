@@ -24,8 +24,10 @@
 
 .general-stats {
   width: 263px;
+  margin-bottom: 20px;
+}
 
-  & .item {
+ .item {
     @mixin stripped;
     display: flex;
     justify-content: space-between;
@@ -45,16 +47,107 @@
       font-weight: bold;
     }
   }
-}
 
 .col {
   display: flex;
   flex-direction: column;
 }
 
+.chart {
+
+}
 .pie-placeholder {
   width: 400px;
-  height: 400px;
-  border-radius: 4px;;
-  background: #efebe9;
+  height: 320px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.legend {
+  display: flex;
+width: 100%;
+  & .col {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    &:last-child {
+      & .val {
+        flex-direction: row-reverse;
+
+        & .icon {
+          margin-left: 10px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &  .val {
+    font-size: 14px;
+    padding:  4px 16px;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+
+    & .icon {
+      height: 10px;
+      width: 10px;
+      content: "";
+      margin-right: 10px;
+      border-radius: 50%;
+
+      &.linear {
+        background-color: #00838f;
+      }
+      &.dealer {
+        background-color: #1976d2;
+      }
+      &.rockstar {
+        background-color: #01579b;
+      }
+      &.bussines {
+        background-color: #0d47a1;
+      }
+    }
+  }
+}
+.chart-title {
+  font-size: 22px;
+  text-align: center;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.chart-desc {
+  flex-grow: 1;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  padding:  12px 12px 12px 35px;
+  line-height: 19px;
+  background: #FFFCDD;
+  border: 1px dashed #e0e0e0;
+
+  & .icon {
+    position: absolute;
+    height: 16px;
+    width: 15px;
+    content: "";
+    background-image: url(./question.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+  }
+
+  & .link {
+    color: #447bc6;
+  }
 }
