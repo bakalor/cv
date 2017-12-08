@@ -44,6 +44,10 @@ const _additionalStats: StatItem[] = [
   {
     name: "Secondary specialization",
     value: "Backend developer (Node.js)"
+  },
+  {
+    name: "Additional interests",
+    value: "AI"
   }
 ];
 
@@ -89,7 +93,18 @@ const pieOptions: any = {
       { label: "Rockstar", value: 10, color: "#0d47a1" },
     ]
   },
-
+  tooltips: {
+    enabled: true,
+    type: "placeholder",
+    string: "{label}: {percentage}%",
+    styles: {
+      fadeInSpeed: 172,
+      backgroundOpacity: 0.7,
+      fontSize: 14,
+      padding: 12,
+      top: 20
+    }
+  },
 };
 export class GeneralInfoCard extends React.PureComponent {
 
@@ -143,7 +158,7 @@ export class GeneralInfoCard extends React.PureComponent {
           <div className={theme.col}>
             <div className={theme.val}>
               <div className={cn(theme.icon, theme.bussines)} />
-              <div className={theme.name}>Bussines Bullshit</div>
+              <div className={theme.name}>Business Bullshitter</div>
             </div>
             <div className={theme.val}>
               <div className={cn(theme.icon, theme.rockstar)} />
