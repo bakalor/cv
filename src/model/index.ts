@@ -11,11 +11,20 @@ export interface Skill {
   iconClass: string;
 }
 
+export interface Job {
+  company: string;
+  period: string;
+  position: string;
+  logoClass: string;
+}
 interface Model {
   profile: {
     general: Stat[],
     additional: Stat[],
   };
+
+  jobHistory: Job[];
+
   skills: {
     frontend: {
       hot: Skill[];
@@ -25,6 +34,11 @@ interface Model {
       hot: Skill[];
       cold: Skill[]
     }
+  };
+
+  links: {
+    github: string;
+    linkedin: string;
   };
 }
 
@@ -75,6 +89,22 @@ export const model: Model = {
       }
     ]
   },
+
+  jobHistory: [
+    {
+      company: "Teamdev",
+      period: "Sep 2015 - July 2017",
+      position: "Junior frontend developer",
+      logoClass: icons.teamdev
+    },
+    {
+      company: "Simcord",
+      period: "July 2017 - Currently working",
+      position: "Middle frontend developer",
+      logoClass: icons.simcord
+    }
+
+  ],
 
   skills: {
     frontend: {
@@ -165,5 +195,10 @@ export const model: Model = {
 
       ],
     }
+  },
+
+  links: {
+    github: "https://github.com/surprised-cat",
+    linkedin: "https://www.linkedin.com/in/andrey-lavrov-399777124"
   }
 };

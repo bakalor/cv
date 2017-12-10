@@ -1,21 +1,8 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import { JobHistoryItem } from "scenes/profile/components/job-history/item";
+import { model } from "model";
 
-const _workHistory = [
-  {
-    companyName: "Teamdev",
-    workingPeriod: "Sep 2015 - July 2017",
-    position: "Junior frontend developer",
-    logoClass: theme.teamdev
-  },
-  {
-    companyName: "Simcord",
-    workingPeriod: "July 2017 - Currently working",
-    position: "Middle frontend developer",
-    logoClass: theme.simcord
-  }
-];
 export class JobHistory extends React.PureComponent {
   render() {
     return <div className={theme.card}>
@@ -25,14 +12,7 @@ export class JobHistory extends React.PureComponent {
       </div>
 
       <div className={theme.content}>
-        {_workHistory.map((item, index) =>
-          <JobHistoryItem
-            key={index}
-            companyName={item.companyName}
-            workPeriod={item.workingPeriod}
-            position={item.position}
-            logoClass={item.logoClass}
-          />)}
+        {model.jobHistory.map((job, index) => <JobHistoryItem key={index} job={job} />)}
       </div>
     </div>;
   }

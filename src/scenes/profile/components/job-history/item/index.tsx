@@ -1,31 +1,25 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import * as cn from "classnames";
+import { Job } from "model";
 
 
-interface PassedProps {
-  companyName: string;
-  workPeriod: string;
-  position: string;
-  logoClass: string;
-}
-
-export class JobHistoryItem extends React.PureComponent<PassedProps> {
+export class JobHistoryItem extends React.PureComponent<{ job: Job }> {
   render() {
-
+    const job = this.props.job;
     return <div className={theme.wrapper}>
       <div className={theme.companyLogo}>
-        <div className={cn(theme.logo, this.props.logoClass)}></div>
+        <div className={cn(theme.logo, job.logoClass)}></div>
       </div>
       <div className={theme.info}>
-        <div className={theme.title}>{this.props.companyName}</div>
+        <div className={theme.title}>{job.company}</div>
         <div className={theme.stat}>
           <div className={theme.name}>Period:</div>
-          <div className={theme.val}>{this.props.workPeriod}</div>
+          <div className={theme.val}>{job.period}</div>
         </div>
         <div className={theme.stat}>
           <div className={theme.name}>Position:</div>
-          <div className={theme.val}>{this.props.position}</div>
+          <div className={theme.val}>{job.position}</div>
         </div>
       </div>
     </div>;
