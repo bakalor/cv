@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import { Pie } from "scenes/profile/components/general/pie";
-import { stats } from "scenes/profile/components/general/stats";
+import { model } from "model";
 
 export class GeneralInfoCard extends React.PureComponent {
 
@@ -12,7 +12,7 @@ export class GeneralInfoCard extends React.PureComponent {
         <div className={theme.generalInfo}>
           <div className={theme.photo}></div>
           <div className={theme.generalStats}>
-            {stats.general.map((stat, index) =>
+            {model.profile.general.map((stat, index) =>
               <div key={index} className={theme.item}>
                 <div className={theme.name}>{stat.name}</div>
                 <div className={theme.value}>{stat.value}</div>
@@ -22,7 +22,7 @@ export class GeneralInfoCard extends React.PureComponent {
         </div>
 
         <div className={theme.additionalInfo}>
-          {stats.additional.map((stat, index) =>
+          {model.profile.additional.map((stat, index) =>
             <div key={index} className={theme.item}>
               <div className={theme.name}>{stat.name}</div>
               <div className={theme.value}>{stat.value}</div>

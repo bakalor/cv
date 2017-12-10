@@ -1,17 +1,12 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import * as cn from "classnames";
+import { Skill } from "model";
 
 
 interface PassedProps {
   name: string;
   skills: Skill[];
-}
-
-interface Skill {
-  name: string;
-  level: string;
-  iconClass: string;
 }
 
 export class SkillCard extends React.PureComponent<PassedProps> {

@@ -1,0 +1,35 @@
+.js {
+  background-image: url(./icons/js.svg);
+}
+
+.css {
+  background-image: url(./icons/css.svg);
+}
+
+.html5 {
+   background-image: url(./icons/html5.svg);
+}
+
+.react {
+  background-image: url(./icons/react.svg);
+}
+
+.ts {
+  background-image: url(./icons/ts.svg);
+}
+
+.redux {
+  background-image: url(./icons/redux.svg);
+}
+
+.webpack {
+   background-image: url(./icons/webpack.svg);
+}
+
+.ember {
+   background-image: url(./icons/ember.svg);
+}
+
+.angular {
+   background-image: url(./icons/angular.svg);
+}
