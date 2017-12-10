@@ -1,0 +1,17 @@
+    .fade-in {
+      max-height: 0;
+
+      &.fade-in-active {
+        max-height: 100px;
+        transition: max-height .2s linear;
+      }
+    }
+
+    .fade-out {
+      max-height: 100px;
+
+      &.fade-out-active {
+        max-height: 0;
+        transition: max-height .2s linear;
+      }
+    }

@@ -1,0 +1,19 @@
+@import "mixins/layout";
+
+
+.grid {
+  display: flex;
+  max-width: 1440px;
+  width: 1440px;
+  margin: 24px 36px;
+
+  & .col {
+    width: 50%;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+

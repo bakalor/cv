@@ -25,16 +25,19 @@
     "d3pie": "^0.2.1",
     "normalize.css": "^7.0.0",
     "react": "^16.0.0",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-transition-group": "^1.2.1"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.3",
     "@types/d3": "^4.12.0",
     "@types/d3pie": "^0.1.5",
     "@types/react": "^16.0.7",
+    "@types/react-addons-css-transition-group": "^15.0.3",
     "@types/react-custom-scrollbars": "^4.0.1",
     "@types/react-dom": "^15.5.5",
     "@types/react-router": "^4.0.15",

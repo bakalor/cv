@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as css from "./theme.css";
+import * as theme from "./theme.css";
 import { RoutingNodeDescriptor } from "services/routing";
 import { NavLink } from "react-router-dom";
 import { RouteComponentProps } from "react-router";
@@ -10,37 +10,26 @@ interface PassedProps {
   route: RoutingNodeDescriptor;
 }
 
-interface State {
-  collapsed: boolean;
-}
-
-export class SidebarItem extends React.Component<PassedProps & RouteComponentProps<{}>, State> {
-
-  constructor(props: any) {
-    super(props);
-    this.state = { collapsed: true };
-  }
+export class SidebarItem extends React.PureComponent<PassedProps & RouteComponentProps<{}>> {
 
   render() {
     const route = this.props.route;
     return <div>
       <NavLink
-        onClick={() => this.toggleCollapse()}
-        className={css.link}
-        activeClassName={css.active}
-        to={route.fullpath}
-        exact={true}>
+        className={theme.link}
+        activeClassName={theme.active}
+        to={route.fullpath}>
         {getIconForRoute(route)}
         {getTitleForRoute(route)}
       </NavLink>
 
 
-      {!this.state.collapsed
+      {this.props.location.pathname.indexOf(this.props.route.path) !== -1
         ? route.children.map(subRoute =>
           <NavLink
             key={route.fullpath}
-            className={css.subLink}
-            activeClassName={css.active}
+            className={theme.subLink}
+            activeClassName={theme.active}
             to={subRoute.fullpath}>
             {getIconForRoute(subRoute)}
             {getTitleForRoute(subRoute)}
@@ -49,5 +38,4 @@ export class SidebarItem extends React.Component<PassedProps & RouteComponentPro
     </div>;
   }
 
-  private toggleCollapse = () => this.setState({ collapsed: !this.state.collapsed });
 }

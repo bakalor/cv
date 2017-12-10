@@ -33,3 +33,27 @@
 .angular {
    background-image: url(./icons/angular.svg);
 }
+
+.node {
+   background-image: url(./icons/node.svg);
+}
+
+.express {
+   background-image: url(./icons/express.svg);
+}
+
+.mysql {
+   background-image: url(./icons/mysql.svg);
+}
+
+.java {
+   background-image: url(./icons/java.svg);
+}
+
+.spring {
+   background-image: url(./icons/spring.svg);
+}
+
+.python {
+   background-image: url(./icons/python.svg);
+}

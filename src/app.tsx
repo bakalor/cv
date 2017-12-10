@@ -17,7 +17,7 @@ class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
       <Switch>
         <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact={true} />
         <Route path={routing.profile.fullpath} component={Profile} />
-        <Route path={routing.stack.fullpath} component={Stack} />
+        <Route path={routing.stack._index.fullpath} component={Stack} />
       </Switch>
     </div>;
   }

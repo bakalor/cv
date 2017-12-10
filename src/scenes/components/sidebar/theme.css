@@ -38,6 +38,13 @@
     margin-bottom: 4px;
     background-image: url(./icons/profile.svg);
   }
+  
+  &.frontend {
+    background-image: url(./icons/frontend.svg);
+  }
+  &.backend {
+    background-image: url(./icons/backend.svg);
+  }
 
   &.stack {
     height: 19px;

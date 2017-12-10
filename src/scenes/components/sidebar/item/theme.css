@@ -17,15 +17,20 @@
 
 .link {
   font-weight: bold;
-  height: 46px;
+  min-height: 46px;
   padding-left: 22px;
 }
 
 .sub-link {
   height: 33px;
   padding-left: 46px;
+  font-weight: 600;
 }
 
 .active {
   background-color: #eee;
+}
+
+.sub-routes {
+  overflow: hidden;
 }
