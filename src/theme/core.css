@@ -8,19 +8,19 @@ html {
 
 body {
   height: 100%;
-    font-family: "Open Sans";
+  font-family: "Open Sans";
   overflow: hidden;
-   background: var(--main-bg-color);
-      & > div {
-      position: relative;
-      display: flex;
-      min-height: 100%;
-    }
+  background: var(--main-bg-color);
+
+  & > div {
+    position: relative;
+    display: flex;
+    min-height: 100%;
+  }
 }
 
 .root {
   position: relative;
-
 }
 
 * > * {

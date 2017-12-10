@@ -1,6 +1,5 @@
 @import "mixins/layout";
 
-
 .grid {
   display: flex;
   max-width: 1440px;

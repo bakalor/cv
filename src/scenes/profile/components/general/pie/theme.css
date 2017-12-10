@@ -19,7 +19,7 @@
   height: 320px;
   border-radius: 4px;
   margin-bottom: 10px;
-  
+
   & > svg {
     overflow: visible;
   }
@@ -28,7 +28,7 @@
 .legend {
   display: flex;
   width: 100%;
-  
+
   & .col {
     display: flex;
     flex-grow: 1;
@@ -50,7 +50,7 @@
 
   & .item {
     font-size: 14px;
-    padding:  4px 16px;
+    padding: 4px 16px;
     font-weight: 600;
     align-items: center;
     display: flex;
@@ -75,7 +75,7 @@
       &.rockstar {
         background-color: #01579b;
       }
-      
+
       &.bussines {
         background-color: #0d47a1;
       }

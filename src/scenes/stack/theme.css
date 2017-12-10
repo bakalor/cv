@@ -1,6 +1,5 @@
 @import "mixins/layout";
 
-
 .wrapper {
   @mixin with-sidebar;
   min-height: 900px;

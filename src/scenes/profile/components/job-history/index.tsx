@@ -8,6 +8,12 @@ const _workHistory = [
     workingPeriod: "Sep 2015 - July 2017",
     position: "Junior frontend developer",
     logoClass: theme.teamdev
+  },
+  {
+    companyName: "Simcord",
+    workingPeriod: "July 2017 - Currently working",
+    position: "Middle frontend developer",
+    logoClass: theme.simcord
   }
 ];
 export class JobHistory extends React.PureComponent {

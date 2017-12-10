@@ -12,7 +12,7 @@
     padding: 20px 24px;
     font-size: 20px;
     font-weight: 600;
-    border-bottom: 1px solid #e0e0e0
+    border-bottom: 1px solid #e0e0e0;
   }
 }
 
@@ -21,8 +21,8 @@
   border-bottom: 1px solid #e0e0e0;
 
   &:last-child {
-    border-bottom:none
-     }
+    border-bottom: none;
+  }
 
   & .icon {
     width: 200px;
@@ -44,8 +44,7 @@
 
   & .level {
     flex-grow: 1;
-      border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
   }
-  
 }
 
