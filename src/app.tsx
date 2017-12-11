@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as core from "./theme/core.css";
-import { withRouter,  RouteComponentProps, Switch, Route, Redirect, } from "react-router";
+import { withRouter, RouteComponentProps, Switch, Route, Redirect, } from "react-router";
 import { Sidebar } from "scenes/components/sidebar";
 import { Header } from "scenes/components/header";
 import { routing } from "services/routing";

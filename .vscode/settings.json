@@ -1,21 +1,32 @@
 {
+  "css.lint.important": "warning",
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.lineNumbers": "on",
+  "editor.quickSuggestions": {
+    "comments": true,
+    "other": true,
+    "strings": true
+  },
   "editor.tabSize": 2,
-  "window.zoomLevel": 0,
-  "workbench.iconTheme": "vscode-icons",
-  "tslint.alwaysShowRuleFailuresAsWarnings": true,
-  "search.exclude": {
-    "**/node_modules": true,
-    "**/*.svg": true
-  },
-  "gitlens.annotations.file.gutter.format": "${author?} ${ago|14-}",
-  "gitlens.annotations.file.gutter.compact": false,
-  "gitlens.annotations.file.gutter.heatmap.enabled": true,
-  "files.exclude": {
-    "**/.git": true,
-    "**/*.css.d.ts": true
-  },
-  "tslint.autoFixOnSave": true,
   "files.associations": {
     "*.css": "postcss"
-  }
+  },
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "gitlens.codeLens.enabled": false,
+  "search.exclude": {
+    "**/*.svg": true,
+    "**/bower_components": true,
+    "**/build": true,
+    "**/dist": true,
+    "**/node_modules": true
+  },
+  "tslint.alwaysShowRuleFailuresAsWarnings": true,
+  "tslint.autoFixOnSave": false,
+  "tslint.jsEnable": true,
+  "window.newWindowDimensions": "maximized",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "newUntitledFile",
+  "tslint.configFile": "../tslint.json"
 }
