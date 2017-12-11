@@ -1,17 +1,19 @@
 {
   "name": "cv",
   "version": "0.0.1",
-  "description": "cv project\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[",
+  "description": "cv project",
   "main": "index.js",
   "scripts": {
     "start": "run-p start:*",
+    "start:prod": "node ./src/server/index.js",
     "start:server": "nodemon --nolazy --watch src ./src/server/index.js",
     "start:client": "webpack -w",
-    "format:css": "stylefmt -r src/**/*.css"
+    "format:css": "stylefmt -r src/**/*.css",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/surprised-cat/cv.git"
+    "url": "https://github.com/surprised-cat/cv.git"
   },
   "keywords": [
     "cv",
@@ -44,8 +46,10 @@
     "@types/react-router-dom": "^4.0.8",
     "awesome-typescript-loader": "^3.2.3",
     "clean-webpack-plugin": "^0.1.17",
+    "cross-env": "^5.1.1",
     "css-loader": "^0.28.7",
     "express": "^4.16.1",
+    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.5",
     "html-webpack-plugin": "^2.30.1",
     "nodemon": "^1.12.1",

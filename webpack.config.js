@@ -3,14 +3,35 @@ const webpack = require("webpack");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const dev = process.env.NODE_ENV !== 'production'
+
+const extractApp = new ExtractTextPlugin("app.css");
+const cssLoaders = [
+  {
+    loader: "css-loader",
+    options: {
+      namedExport: true,
+      camelCase: true,
+      modules: true,
+      importLoaders: 1,
+      localIdentName: "[local]--[hash:base64:5]"
+    }
+  },
+  "postcss-loader"
+]
 
 module.exports = {
   entry: {
-    app: [
-      "react-hot-loader/patch",
-      "./src/bootstrap.tsx",
-      "webpack-hot-middleware/client"
-    ],
+    app: dev
+      ? [
+        "react-hot-loader/patch",
+        "webpack-hot-middleware/client",
+        "./src/bootstrap.tsx",
+      ]
+      : "./src/bootstrap.tsx",
+
     vendor: "./src/vendor.ts"
   },
 
@@ -47,36 +68,33 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          "style-loader",
-          {
-            loader: "css-loader",
-            options: {
-              namedExport: true,
-              camelCase: true,
-              modules: true,
-              importLoaders: 1,
-              localIdentName: "[local]--[hash:base64:5]"
-            }
-          },
-          "postcss-loader"
-        ]
+        use: dev
+          ? [{ loader: "style-loader" }].concat(cssLoaders)
+          : extractApp.extract({
+            fallback: "style-loader",
+            use: cssLoaders
+          })
       },
     ]
   },
 
-  devtool: 'cheap-module-source-map',
+  devtool: dev
+    ? "cheap-module-eval-source-map"
+    : "nosources-source-map",
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       template: "./src/index.html"
     }),
     new webpack.ProvidePlugin({
       d3: "d3",
       "window.d3": "d3",
-
     }),
-    new CleanWebpackPlugin("./dist")
-  ]
+    extractApp
+  ].concat(dev
+    ? [
+      new webpack.HotModuleReplacementPlugin(),
+      new CleanWebpackPlugin("./dist"),
+    ]
+    : [])
 }
