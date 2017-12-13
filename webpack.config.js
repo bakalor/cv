@@ -28,6 +28,9 @@ const cssLoaders = [
 ]
 
 module.exports = {
+
+  context: path.resolve("./"),
+
   entry: {
     app: dev
       ? [
@@ -57,18 +60,30 @@ module.exports = {
     rules: [
       {
         test: /\.ts(x?)$/,
+        exclude: [/node_modules/],
         use: [
           "react-hot-loader/webpack",
           "awesome-typescript-loader"
         ]
       },
       {
-        test: /\.svg$|.jpg$|.ttf$/,
+        test: /\.svg$|.jpg$/,
         use: [
           {
             loader: "url-loader",
             options: {
-              limit: 64000
+              limit: 6400
+            }
+          }
+        ]
+      },
+      {
+        test: /.ttf$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "fonts/[name].[ext]"
             }
           }
         ]

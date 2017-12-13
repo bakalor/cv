@@ -1,1 +1,0 @@
-declare var require: <T=any>(name: string) => T;
