@@ -1,3 +1,5 @@
+const dev = process.env.NODE_ENV !== "production";
+
 module.exports = {
   plugins: [
     require("postcss-import")({
@@ -16,6 +18,5 @@ module.exports = {
           }
         }
       }
-    }),
-  ]
+    })]
 }

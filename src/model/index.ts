@@ -92,18 +92,17 @@ export const model: Model = {
 
   jobHistory: [
     {
+      company: "Simcord",
+      period: "July 2017 - Currently working",
+      position: "Middle frontend developer",
+      logoClass: icons.simcord
+    },
+    {
       company: "Teamdev",
       period: "Sep 2015 - July 2017",
       position: "Junior frontend developer",
       logoClass: icons.teamdev
     },
-    {
-      company: "Simcord",
-      period: "July 2017 - Currently working",
-      position: "Middle frontend developer",
-      logoClass: icons.simcord
-    }
-
   ],
 
   skills: {
@@ -138,6 +137,11 @@ export const model: Model = {
           name: "Redux.js",
           level: "High",
           iconClass: icons.redux
+        },
+        {
+          name: "PostCSS",
+          level: "High",
+          iconClass: icons.postcss
         },
         {
           name: "Webpack",

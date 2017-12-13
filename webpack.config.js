@@ -1,5 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
+const cssNanoConfig = require("webpack");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin');
@@ -15,8 +16,12 @@ const cssLoaders = [
       namedExport: true,
       camelCase: true,
       modules: true,
-      importLoaders: 1,
-      localIdentName: "[local]--[hash:base64:5]"
+      importLoaders: 2,
+      localIdentName: dev
+        ? "[local]--[hash:base64:5]"
+        : "[hash:base64:5]",
+      sourceMap: dev,
+      minimize: dev ? false : cssNanoConfig
     }
   },
   "postcss-loader"
@@ -40,12 +45,14 @@ module.exports = {
     filename: "[name].js",
     publicPath: "/"
   },
+
   resolve: {
     extensions: [".tsx", ".ts", ".css", ".js"],
     plugins: [
       new TsConfigPathsPlugin()
     ]
   },
+
   module: {
     rules: [
       {

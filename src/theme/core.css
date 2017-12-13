@@ -9,12 +9,11 @@ html {
 body {
   height: 100%;
   font-family: "Open Sans";
-  overflow: hidden;
   background: var(--main-bg-color);
 
   & > div {
     position: relative;
-       display: flex;
+    display: flex;
     min-height: 100%;
   }
 }

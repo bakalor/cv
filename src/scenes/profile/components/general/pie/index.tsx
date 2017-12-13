@@ -61,10 +61,9 @@ const pieOptions: any = {
 
 export class Pie extends React.PureComponent {
   private _chart: HTMLDivElement;
-  private _pie: d3pie.ID3PieChart;
 
   componentDidMount() {
-    this._pie = new d3pie(this._chart, pieOptions);
+    new d3pie(this._chart, pieOptions);
   }
 
   render() {

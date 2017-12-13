@@ -1,9 +1,9 @@
 import * as React from "react";
-import * as css from "./theme.css";
+import * as theme from "./theme.css";
 
 export class Header extends React.PureComponent {
   render() {
-    return <div className={css.header}>
+    return <div className={theme.header}>
     </div>
   }
 }
