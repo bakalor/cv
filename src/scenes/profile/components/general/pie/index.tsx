@@ -1,5 +1,6 @@
 import * as cn from 'classnames';
 import * as React from 'react';
+import * as d3pie from 'd3pie';
 import { pieOptions } from 'scenes/profile/components/general/pie/pie-options';
 import * as theme from './theme.css';
 
@@ -8,7 +9,6 @@ export class Pie extends React.PureComponent {
   private _chart: HTMLDivElement;
 
   componentDidMount() {
-    // tslint:disable-next-line:no-unused-expression
     new d3pie(this._chart, (pieOptions as any));
   }
 
