@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const cssNanoConfig = require("webpack");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin');
@@ -21,7 +20,16 @@ const cssLoaders = [
         ? "[local]--[hash:base64:5]"
         : "[hash:base64:5]",
       sourceMap: dev,
-      minimize: dev ? false : cssNanoConfig
+      minimize: dev ? false : {
+        preset: ["default", {
+          discardComments: {
+            removeAll: true
+          },
+          autoprefixer: false,
+          zindex: false,
+          normalizeUrl: false
+        }]
+      }
     }
   },
   "postcss-loader"
