@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as css from "./theme.css";
-import * as cn from "classnames";
-import { model } from "model";
+import * as React from 'react';
+import * as css from './theme.css';
+import * as cn from 'classnames';
+import { model } from 'model';
 
 export class SideBarFooter extends React.PureComponent {
   render() {

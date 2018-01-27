@@ -1,6 +1,6 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import Scrollbars from "react-custom-scrollbars";
+import * as React from 'react';
+import * as theme from './theme.css';
+import Scrollbars from 'react-custom-scrollbars';
 
 interface PassedProps {
   horizontal?: boolean;
@@ -18,10 +18,5 @@ export class ScrollbarsAdapter extends React.PureComponent<PassedProps> {
     </Scrollbars>;
   }
 
-  private renderScroll({ ...props }) {
-    return <div
-      className={theme.scroll}
-      {...props}    >
-    </div>;
-  }
+  private renderScroll = ({ ...props }) => <div className={theme.scroll} {...props} />;
 }

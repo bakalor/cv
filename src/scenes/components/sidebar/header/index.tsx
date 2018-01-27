@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as css from "./theme.css";
+import * as React from 'react';
+import * as css from './theme.css';
 
 export class SideBarHeader extends React.PureComponent {
   render() {

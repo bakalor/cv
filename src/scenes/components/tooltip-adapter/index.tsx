@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import * as cn from "classnames";
-import * as ReactTooltip from "react-tooltip";
+import * as React from 'react';
+import * as theme from './theme.css';
+import * as cn from 'classnames';
+import * as ReactTooltip from 'react-tooltip';
 
 interface PassedProps {
   content: React.ReactNode;

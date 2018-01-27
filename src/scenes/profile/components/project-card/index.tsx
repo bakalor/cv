@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as theme from "./theme.css";
+import * as React from 'react';
+import * as theme from './theme.css';
 
 export class ProjectCard extends React.PureComponent {
   render() {

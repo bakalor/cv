@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import { TechStackCard } from "scenes/stack/components/skill-card";
-import { model } from "model";
+import * as React from 'react';
+import * as theme from './theme.css';
+import { TechStackCard } from 'scenes/stack/components/skill-card';
+import { model } from 'model';
 
 export class FrontendStack extends React.PureComponent {
   render() {

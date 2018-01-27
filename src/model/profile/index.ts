@@ -1,46 +1,46 @@
 export const profile = {
   general: [
     {
-      name: "First name",
-      value: "Andrey"
+      name: 'First name',
+      value: 'Andrey'
     },
     {
-      name: "Last name",
-      value: "Lavrov"
+      name: 'Last name',
+      value: 'Lavrov'
     },
     {
-      name: "Age",
+      name: 'Age',
       value: 21
     },
     {
-      name: "Location",
-      value: "Kharkov"
+      name: 'Location',
+      value: 'Kharkov'
     },
     {
-      name: "Company",
-      value: "Simcord"
+      name: 'Company',
+      value: 'Simcord'
     },
   ],
   additional: [
     {
-      name: "Primary specialization",
-      value: "Frontend developer"
+      name: 'Primary specialization',
+      value: 'Frontend developer'
     },
     {
-      name: "Level",
-      value: "Middle+"
+      name: 'Level',
+      value: 'Middle+'
     },
     {
-      name: "Secondary specialization",
-      value: "Backend developer (Node.js)"
+      name: 'Secondary specialization',
+      value: 'Backend developer (Node.js)'
     },
     {
-      name: "Additional interests",
-      value: "AI"
+      name: 'Additional interests',
+      value: 'AI'
     },
     {
-      name: "English",
-      value: "Intermediate"
+      name: 'English',
+      value: 'Intermediate'
     }
   ]
-}
+};

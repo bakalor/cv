@@ -1,5 +1,4 @@
 {
-  "css.lint.important": "warning",
   "editor.detectIndentation": false,
   "editor.formatOnSave": true,
   "editor.lineNumbers": "on",
@@ -10,7 +9,8 @@
   },
   "editor.tabSize": 2,
   "files.associations": {
-    "*.css": "postcss"
+    "*.css": "postcss",
+    ".stylelint": "json"
   },
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
@@ -23,9 +23,12 @@
     "**/node_modules": true
   },
   "tslint.alwaysShowRuleFailuresAsWarnings": true,
-  "tslint.autoFixOnSave": false,
+  "tslint.autoFixOnSave": true,
   "tslint.jsEnable": true,
+  "tslint.configFile": "tslint.json",
   "window.newWindowDimensions": "maximized",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "stylelint.enable": true,
+  "css.validate": false,
 }

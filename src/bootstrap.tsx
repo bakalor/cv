@@ -1,8 +1,7 @@
-import * as ReactDOM from "react-dom";
-import * as React from "react";
-import { App } from "app";
-import { BrowserRouter } from "react-router-dom";
-
+import * as ReactDOM from 'react-dom';
+import * as React from 'react';
+import { App } from 'app';
+import { BrowserRouter } from 'react-router-dom';
 
 
 const render = (Component: any) =>
@@ -10,15 +9,15 @@ const render = (Component: any) =>
     <BrowserRouter>
       <Component />
     </BrowserRouter >,
-    document.getElementById("app")
+    document.getElementById('app')
   );
 
-render(App)
+render(App);
 declare var module: any;
 
 if (module.hot) {
-  module.hot.accept("./app.tsx", () => {
-    const AppComponent = require("./app.tsx").App;
+  module.hot.accept('./app.tsx', () => {
+    const AppComponent = require('./app.tsx').App;
     render(AppComponent);
-  })
+  });
 }

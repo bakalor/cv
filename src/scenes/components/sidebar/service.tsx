@@ -1,13 +1,13 @@
-import { RoutingNodeDescriptor, routing } from "services/routing";
-import * as React from "react";
-import * as theme from "./theme.css";
-import * as cn from "classnames";
+import { RoutingNodeDescriptor, routing } from 'services/routing';
+import * as React from 'react';
+import * as theme from './theme.css';
+import * as cn from 'classnames';
 
 const routeToSidebarTitle = new Map<RoutingNodeDescriptor, React.ReactNode>([
-  [routing.profile, "Profile"],
-  [routing.stack._index, "Stack"],
-  [routing.stack.frontend, "Frontend"],
-  [routing.stack.backend, "Backend"],
+  [routing.profile, 'Profile'],
+  [routing.stack._index, 'Stack'],
+  [routing.stack.frontend, 'Frontend'],
+  [routing.stack.backend, 'Backend'],
 ]);
 
 const routeToSidebarIcon = new Map<RoutingNodeDescriptor, React.ReactNode>([

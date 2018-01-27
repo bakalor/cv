@@ -1,7 +1,7 @@
-import { frontend } from "model/skills/frontend";
-import { backend } from "model/skills/backend";
+import { backend } from 'model/skills/backend';
+import { frontend } from 'model/skills/frontend';
 
 export const skills = {
   frontend,
   backend
-}
+};

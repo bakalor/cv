@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import { Redirect, Switch, Route } from "react-router";
-import { routing } from "services/routing";
-import { FrontendStack } from "scenes/stack/frontend";
-import { BackendStack } from "scenes/stack/backend";
+import * as React from 'react';
+import * as theme from './theme.css';
+import { Redirect, Switch, Route } from 'react-router';
+import { routing } from 'services/routing';
+import { FrontendStack } from 'scenes/stack/frontend';
+import { BackendStack } from 'scenes/stack/backend';
 
 export class Stack extends React.PureComponent {
   render() {

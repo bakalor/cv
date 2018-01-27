@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import { Pie } from "scenes/profile/components/general/pie";
-import { model } from "model";
+import * as React from 'react';
+import * as theme from './theme.css';
+import { Pie } from 'scenes/profile/components/general/pie';
+import { model } from 'model';
 
 export class GeneralInfoCard extends React.PureComponent {
 

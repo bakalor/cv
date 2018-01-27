@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import { RoutingNodeDescriptor } from "services/routing";
-import { NavLink } from "react-router-dom";
-import { RouteComponentProps } from "react-router";
-import { getTitleForRoute, getIconForRoute } from "scenes/components/sidebar/service";
+import * as React from 'react';
+import * as theme from './theme.css';
+import { RoutingNodeDescriptor } from 'services/routing';
+import { NavLink } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
+import { getTitleForRoute, getIconForRoute } from 'scenes/components/sidebar/service';
 
 
 interface PassedProps {

@@ -1,9 +1,9 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import * as cn from "classnames";
-import { GeneralInfoCard } from "scenes/profile/components/general";
-import { ProjectCard } from "scenes/profile/components/project-card";
-import { JobHistory } from "scenes/profile/components/job-history";
+import * as React from 'react';
+import * as theme from './theme.css';
+import * as cn from 'classnames';
+import { GeneralInfoCard } from 'scenes/profile/components/general';
+import { ProjectCard } from 'scenes/profile/components/project-card';
+import { JobHistory } from 'scenes/profile/components/job-history';
 
 export class Profile extends React.PureComponent {
   render() {

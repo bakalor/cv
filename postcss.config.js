@@ -5,7 +5,7 @@ module.exports = {
     require("postcss-import")({
       path: [
         "src",
-        "src/theme"
+        "src/theme",
       ]
     }),
     require("postcss-mixins")(),

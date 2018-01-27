@@ -1,24 +1,24 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import * as cn from "classnames";
-import { TooltipAdapter } from "scenes/components/tooltip-adapter";
-import { Skill } from "model/interfaces";
+import * as React from 'react';
+import * as theme from './theme.css';
+import * as cn from 'classnames';
+import { TooltipAdapter } from 'scenes/components/tooltip-adapter';
+import { Skill } from 'model/interfaces';
 
 
 interface PassedProps {
-  type: "hot" | "cold";
+  type: 'hot' | 'cold';
   skills: Skill[];
 }
 
 const _stackNames: { [key: string]: string } = {
-  hot: "Hot stack",
-  cold: "Cold stack",
-}
+  hot: 'Hot stack',
+  cold: 'Cold stack',
+};
 
 const _hints: { [key: string]: string } = {
-  hot: "No knowledges recovery time required",
-  cold: "It will require some time to recover knowledges",
-}
+  hot: 'No knowledges recovery time required',
+  cold: 'It will require some time to recover knowledges',
+};
 
 export class TechStackCard extends React.PureComponent<PassedProps> {
   render() {

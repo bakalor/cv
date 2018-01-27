@@ -1,7 +1,7 @@
-import * as React from "react";
-import * as theme from "./theme.css";
-import { JobHistoryItem } from "scenes/profile/components/job-history/item";
-import { model } from "model";
+import * as React from 'react';
+import * as theme from './theme.css';
+import { JobHistoryItem } from 'scenes/profile/components/job-history/item';
+import { model } from 'model';
 
 export class JobHistory extends React.PureComponent {
   render() {

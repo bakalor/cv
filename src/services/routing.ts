@@ -13,7 +13,7 @@ export class RoutingNodeDescriptor {
 
   addChildNode(child: RoutingNodeDescriptor) {
     this.children.push(child);
-    child._fullpath = `${this._fullpath !== "/" ? this._fullpath : ""}/${child.path}`;
+    child._fullpath = `${this._fullpath !== '/' ? this._fullpath : ''}/${child.path}`;
   }
 }
 
@@ -26,7 +26,7 @@ export const buildRoutingMap = (actualRoot: RoutingNodeDescriptor, actualDslRoot
 
   if (!(actualDslRoot instanceof RoutingNodeDescriptor)) {
     for (const key in actualDslRoot) {
-      if (key !== "_index") {
+      if (key !== '_index') {
         const childItem = actualDslRoot[key];
 
         if (childItem instanceof RoutingNodeDescriptor) {
@@ -42,12 +42,12 @@ export const buildRoutingMap = (actualRoot: RoutingNodeDescriptor, actualDslRoot
 };
 
 export const routing = {
-  _index: new RoutingNodeDescriptor("/"),
-  profile: new RoutingNodeDescriptor("profile"),
+  _index: new RoutingNodeDescriptor('/'),
+  profile: new RoutingNodeDescriptor('profile'),
   stack: {
-    _index: new RoutingNodeDescriptor("stack"),
-    frontend: new RoutingNodeDescriptor("frontend"),
-    backend: new RoutingNodeDescriptor("backend"),
+    _index: new RoutingNodeDescriptor('stack'),
+    frontend: new RoutingNodeDescriptor('frontend'),
+    backend: new RoutingNodeDescriptor('backend'),
   }
 };
 
