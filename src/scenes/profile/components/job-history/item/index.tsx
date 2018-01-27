@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import * as cn from "classnames";
-import { Job } from "model";
+import { Job } from "model/interfaces";
 
 
 export class JobHistoryItem extends React.PureComponent<{ job: Job }> {

@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as theme from "./theme.css";
 import * as cn from "classnames";
-import { Skill } from "model";
 import { TooltipAdapter } from "scenes/components/tooltip-adapter";
+import { Skill } from "model/interfaces";
 
 
 interface PassedProps {

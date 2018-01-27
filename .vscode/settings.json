@@ -27,6 +27,5 @@
   "tslint.jsEnable": true,
   "window.newWindowDimensions": "maximized",
   "workbench.iconTheme": "vscode-icons",
-  "workbench.startupEditor": "newUntitledFile",
-  "tslint.configFile": "../tslint.json"
+  "workbench.startupEditor": "newUntitledFile"
 }

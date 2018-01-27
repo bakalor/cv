@@ -9,6 +9,11 @@
     "arrow-parens": false,
     "eofline": true,
     "max-classes-per-file": true,
+    "quotemark": [
+      true,
+      "single",
+      "jsx-double"
+    ],
     "max-line-length": [
       true,
       200

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
@@ -13,22 +13,9 @@
     "strictNullChecks": true,
     "strict": true,
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es2015",
-      "es2015.promise"
-    ],
-    "types": [
-      "react",
-      "react-dom",
-      "react-router",
-      "react-router-dom",
-      "node"
-    ],
     "baseUrl": "./src"
   },
   "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
+    "node_modules"
   ]
 }
