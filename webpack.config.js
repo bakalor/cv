@@ -61,7 +61,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".css", ".js"],
     plugins: [
       new TsConfigPathsPlugin()
-    ]
+    ],
   },
 
   module: {
@@ -126,5 +126,9 @@ module.exports = {
       new webpack.HotModuleReplacementPlugin(),
       new CleanWebpackPlugin("./dist"),
     ]
-    : [])
-}
+    : []),
+
+  stats: {
+    children: false
+  }
+};
