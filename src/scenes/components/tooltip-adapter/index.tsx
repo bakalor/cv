@@ -12,18 +12,34 @@ interface PassedProps {
 export class TooltipAdapter extends React.PureComponent<PassedProps> {
 
   render() {
-    const id = new Date().getTime().toString();
+    const {
+      iconCssClass,
+      contentCssClass,
+      content,
+    } = this.props;
+
+    const tooltipId = this.getTooltipId();
+
+    const iconClasses = cn(theme.icon, iconCssClass);
+    const contentClasses = cn(theme.tooltip, contentCssClass);
 
     return <div className={theme.wrapper}>
-      <a className={cn(theme.icon, this.props.iconCssClass)} data-tip data-for={id}> </a>
+      <a
+        className={iconClasses}
+        data-tip
+        data-for={tooltipId}
+      />
+
       <ReactTooltip
-        id={id}
+        id={tooltipId}
         globalEventOff="click"
-        className={cn(theme.tooltip, this.props.contentCssClass)}
+        className={contentClasses}
         event="click"
         effect="solid">
-        {this.props.content}
+        {content}
       </ReactTooltip>
     </div>;
   }
+
+  private getTooltipId = () => new Date().getTime().toString();
 }

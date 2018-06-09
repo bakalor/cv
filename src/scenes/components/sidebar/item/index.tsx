@@ -3,7 +3,10 @@ import * as theme from './theme.css';
 import { RoutingNodeDescriptor } from 'services/routing';
 import { NavLink } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
-import { getTitleForRoute, getIconForRoute } from 'scenes/components/sidebar/service';
+import {
+  getTitleForRoute,
+  getIconForRoute,
+} from 'scenes/components/sidebar/service';
 
 
 interface PassedProps {
@@ -13,7 +16,10 @@ interface PassedProps {
 export class SidebarItem extends React.PureComponent<PassedProps & RouteComponentProps<{}>> {
 
   render() {
-    const route = this.props.route;
+    const {
+      route,
+    } = this.props;
+
     return <div>
       <NavLink
         className={theme.link}

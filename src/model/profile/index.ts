@@ -10,7 +10,7 @@ export const profile = {
     },
     {
       name: 'Age',
-      value: 21
+      value: 22
     },
     {
       name: 'Location',
@@ -18,7 +18,7 @@ export const profile = {
     },
     {
       name: 'Company',
-      value: 'Simcord'
+      value: 'EPAM Systems'
     },
   ],
   additional: [
@@ -36,7 +36,7 @@ export const profile = {
     },
     {
       name: 'Additional interests',
-      value: 'AI'
+      value: 'Information secutity'
     },
     {
       name: 'English',

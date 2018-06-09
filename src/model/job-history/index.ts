@@ -2,8 +2,14 @@ import * as icons from 'model/icons.css';
 
 export const jobHistory = [
   {
+    company: 'EPAM Systems',
+    period: 'February 2018 - Currently working',
+    position: 'Middle frontend developer',
+    logoClass: icons.epam
+  },
+  {
     company: 'Simcord',
-    period: 'July 2017 - Currently working',
+    period: 'July 2017 - February 2018',
     position: 'Middle frontend developer',
     logoClass: icons.simcord
   },
