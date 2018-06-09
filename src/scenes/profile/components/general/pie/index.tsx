@@ -6,10 +6,11 @@ import * as theme from './theme.css';
 
 
 export class Pie extends React.PureComponent {
-  private _chart: HTMLDivElement;
+  
+  private _chart?: HTMLElement;
 
   componentDidMount() {
-    new d3pie(this._chart, (pieOptions as any));
+    new d3pie(this._chart!, (pieOptions as any));
   }
 
   render() {
