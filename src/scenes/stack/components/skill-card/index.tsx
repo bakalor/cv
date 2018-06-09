@@ -35,7 +35,7 @@ export class TechStackCard extends React.PureComponent<PassedProps> {
       </div>
       <div className={theme.body}>
         {skills.map(skill => <div className={theme.row}>
-          <div className={cn(theme.icon, skill.iconClass)}></div>
+          <div className={cn(theme.icon, skill.iconClass)} />
           <div className={theme.name}>{skill.name}</div>
           <div className={theme.level}>{skill.level}</div>
         </div>)}

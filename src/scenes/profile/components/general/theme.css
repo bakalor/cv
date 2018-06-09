@@ -22,6 +22,9 @@
   background: #efebe9;
   border-radius: 4px;
   margin-right: 20px;
+  background-image: url('./avatar.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .general-stats {

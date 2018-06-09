@@ -10,7 +10,7 @@ export class GeneralInfoCard extends React.PureComponent {
       <div className={theme.col}>
 
         <div className={theme.generalInfo}>
-          <div className={theme.photo}></div>
+          <div className={theme.photo} />
           <div className={theme.generalStats}>
             {model.profile.general.map((stat, index) =>
               <div key={index} className={theme.item}>
@@ -34,7 +34,7 @@ export class GeneralInfoCard extends React.PureComponent {
       <div className={theme.col}>
         <Pie />
         <div className={theme.chartDesc}>
-          <div className={theme.icon}></div>
+          <div className={theme.icon} />
           To read about this chart please visit this article:{<br />}
           <a href="https://habrahabr.ru/post/336248/" className={theme.link}> Habrahabr</a>
         </div>
