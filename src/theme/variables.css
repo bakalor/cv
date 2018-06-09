@@ -1,0 +1,10 @@
+  :root {
+    --app-bg-color: #fafafa;
+
+    --desktop-container-min-width: 980px;
+    --desktop-container-side-paddings: 20px;
+    --desktop-container-vertical-margins: 48px;
+    
+    --desktop-header-height: 64px;
+    --desktop-sidebar-width: 256px;
+  }

@@ -1,3 +1,5 @@
+@import "variables.css";
+
 :root {
   --bg-color: #00bcd4;
 }
@@ -10,11 +12,5 @@
   background-color: var(--bg-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
   z-index: 1;
-  height: 64px;
-}
-
-title {
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
+  height: var(--desktop-header-height);
 }

@@ -11,9 +11,7 @@ export class JobHistory extends React.PureComponent {
         <div className={theme.title}>Job history</div>
       </div>
 
-      <div className={theme.content}>
-        {model.jobHistory.map((job, index) => <JobHistoryItem key={index} job={job} />)}
-      </div>
+      {model.jobHistory.map((job, index) => <JobHistoryItem key={index} job={job} />)}
     </div>;
   }
 }

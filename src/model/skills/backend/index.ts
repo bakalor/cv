@@ -4,12 +4,12 @@ export const backend = {
   hot: [
     {
       name: 'Node.js',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.node
     },
     {
       name: 'Express.js',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.express
     },
     {
@@ -19,19 +19,19 @@ export const backend = {
     },
     {
       name: 'Python',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.python
     },
   ],
   cold: [
     {
       name: 'Java',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.java
     },
     {
       name: 'Spring',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.spring
     },
 

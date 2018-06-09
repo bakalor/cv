@@ -4,6 +4,7 @@ import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export class Accordeon extends React.PureComponent {
+
   render() {
     return <ReactCSSTransitionGroup
       component="div"

@@ -6,6 +6,7 @@ import { Header } from 'scenes/components/header';
 import { routing } from 'services/routing';
 import { Profile } from 'scenes/profile';
 import { Stack } from 'scenes/stack';
+import { ScreenContentContainer } from 'scenes/components/screen-content-container';
 
 class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
   render() {
@@ -14,11 +15,13 @@ class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
 
       <Sidebar {...this.props} />
 
-      <Switch>
-        <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact={true} />
-        <Route path={routing.profile.fullpath} component={Profile} />
-        <Route path={routing.stack._index.fullpath} component={Stack} />
-      </Switch>
+      <ScreenContentContainer>
+        <Switch>
+          <Redirect from={routing._index.fullpath} to={routing.profile.fullpath} exact={true} />
+          <Route path={routing.profile.fullpath} component={Profile} />
+          <Route path={routing.stack._index.fullpath} component={Stack} />
+        </Switch>
+      </ScreenContentContainer>
     </div>;
   }
 }

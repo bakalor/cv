@@ -40,7 +40,7 @@ export const profile = {
     },
     {
       name: 'English',
-      value: 'Intermediate'
+      value: 'Moderate'
     }
   ]
 };

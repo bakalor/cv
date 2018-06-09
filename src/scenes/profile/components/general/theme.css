@@ -1,11 +1,13 @@
+@import "variables";
 @import "mixins/layout";
 @import "mixins/lists";
 
 .card {
   @mixin card;
   display: flex;
-  height: 540px;
-  width: 960px;
+  width: calc(980px - 2 * var(--desktop-container-side-paddings));
+  min-width: calc(980px - 2 * var(--desktop-container-side-paddings));
+  margin-bottom: 24px;
   padding: 24px;
   justify-content: space-between;
 }
@@ -51,6 +53,11 @@
 .col {
   display: flex;
   flex-direction: column;
+  margin-right: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .chart-desc {

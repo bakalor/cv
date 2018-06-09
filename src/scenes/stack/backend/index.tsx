@@ -1,11 +1,11 @@
 import * as React from 'react';
-import * as theme from './theme.css';
+import * as theme from '../styles/grid-layout.css';
 import { TechStackCard } from 'scenes/stack/components/skill-card';
 import { model } from 'model';
 
 export class BackendStack extends React.PureComponent {
   render() {
-    return <div className={theme.wrapper}>
+    return (
       <div className={theme.grid}>
         <div className={theme.col}>
           <TechStackCard
@@ -18,6 +18,6 @@ export class BackendStack extends React.PureComponent {
             skills={model.skills.backend.cold} />
         </div>
       </div>
-    </div>;
+    );
   }
 }

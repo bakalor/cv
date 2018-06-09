@@ -14,7 +14,7 @@ export const frontend = {
     },
     {
       name: 'HTML5',
-      level: 'Intermediate',
+      level: 'Moderate',
       iconClass: icons.html5
     },
     {

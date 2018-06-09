@@ -1,5 +1,6 @@
 @import "normalize.css";
 @import "reset-styles";
+@import "variables.css";
 @import "./fonts.css";
 
 html {
@@ -9,7 +10,7 @@ html {
 body {
   height: 100%;
   font-family: "Open Sans";
-  background: var(--main-bg-color);
+  background: var(--app-bg-color);
 
   & > div {
     position: relative;
@@ -20,6 +21,9 @@ body {
 
 .root {
   position: relative;
+  min-height: 100%;
+  width: 100%;
+  padding: var(--desktop-header-height) 0 0 var(--desktop-sidebar-width)
 }
 
 * > * {

@@ -4,7 +4,6 @@ import * as cn from 'classnames';
 import { TooltipAdapter } from 'scenes/components/tooltip-adapter';
 import { Skill } from 'model/interfaces';
 
-
 interface PassedProps {
   type: 'hot' | 'cold';
   skills: Skill[];
@@ -22,17 +21,20 @@ const _hints: { [key: string]: string } = {
 
 export class TechStackCard extends React.PureComponent<PassedProps> {
   render() {
-    const type = this.props.type;
+    const {
+      type,
+      skills,
+    } = this.props;
 
     return <div className={theme.wrapper}>
       <div className={theme.header}>
         <div className={theme.title}>
-          {_stackNames[this.props.type]}
+          {_stackNames[type]}
         </div>
         <TooltipAdapter content={_hints[type]} />
       </div>
       <div className={theme.body}>
-        {this.props.skills.map(skill => <div className={theme.row}>
+        {skills.map(skill => <div className={theme.row}>
           <div className={cn(theme.icon, skill.iconClass)}></div>
           <div className={theme.name}>{skill.name}</div>
           <div className={theme.level}>{skill.level}</div>

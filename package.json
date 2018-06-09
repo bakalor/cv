@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "run-p start:*",
-    "start:prod": "node ./src/server/index.js",
     "start:server": "nodemon --nolazy --watch src ./src/server/index.js",
     "start:client": "webpack -w",
     "format:css": "stylefmt -r src/**/*.css",

@@ -1,6 +1,8 @@
 @import "mixins/layout";
+@import "variables";
 
 .wrapper {
-  @mixin with-sidebar;
-  min-height: 900px;
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
 }

@@ -3,7 +3,6 @@
 
 .card {
   @mixin card;
-  height: 100%;
 }
 
 .header {
@@ -24,11 +23,3 @@
   }
 }
 
-.item {
-  height: 60px;
-  border-bottom: 1px solid #e0e0e0;
-
-  &:last-child {
-    border-bottom: none;
-  }
-}
