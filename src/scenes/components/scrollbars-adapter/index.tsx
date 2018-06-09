@@ -4,7 +4,7 @@ import Scrollbars from 'react-custom-scrollbars';
 
 interface PassedProps {
   horizontal?: boolean;
-  className: string;
+  className?: string;
 }
 export class ScrollbarsAdapter extends React.PureComponent<PassedProps> {
   render() {
