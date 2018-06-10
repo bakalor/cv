@@ -1,17 +1,21 @@
-    .fade-in {
-      max-height: 0;
+:root {
+  --animation-duration: 0.4s;
+}
 
-      &.fade-in-active {
-        max-height: 401px;
-        transition: max-height 0.4s linear;
-      }
-    }
+.fade-in {
+  max-height: 0;
 
-    .fade-out {
-      max-height: 401px;
+  &.fade-in-active {
+    max-height: 401px;
+    transition: max-height var(--animation-duration) linear;
+   }
+}
 
-      &.fade-out-active {
-        max-height: 0;
-        transition: max-height 0.4s linear;
-      }
-    }
+.fade-out {
+  max-height: 401px;
+
+  &.fade-out-active {
+    max-height: 0;
+    transition: max-height var(--animation-duration) linear;
+  }
+}

@@ -15,8 +15,8 @@ export class Accordeon extends React.PureComponent {
       }}
       transitionLeave={true}
       transitionEnter={true}
-      transitionLeaveTimeout={400}
-      transitionEnterTimeout={400}>
+      transitionLeaveTimeout={300}
+      transitionEnterTimeout={300}>
       {this.props.children}
     </ReactCSSTransitionGroup>;
   }

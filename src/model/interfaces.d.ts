@@ -14,12 +14,24 @@ export interface Job {
   period: string;
   position: string;
   logoClass: string;
+  details: JobDetails[]
+}
+
+export interface JobDetails {
+  jobPosition: string;
+  teamSize: number;
+  customer: string;
+  role: string;
+  description: string;
+  responsibleFor: string[];
+  tools: string[];
+  technologies: string[];
 }
 
 export interface Model {
   profile: {
-    general: Stat[],
-    additional: Stat[],
+    general: Stat[];
+    additional: Stat[];
   };
 
   jobHistory: Job[];

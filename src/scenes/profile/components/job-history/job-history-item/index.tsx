@@ -19,6 +19,7 @@ export class JobHistoryItem extends React.PureComponent<{ job: Job }, { open: bo
         company,
         period,
         position,
+        details,
       },
     } = this.props;
 
@@ -44,15 +45,25 @@ export class JobHistoryItem extends React.PureComponent<{ job: Job }, { open: bo
               <div className={theme.name}>Position:</div>
               <div className={theme.val}>{position}</div>
             </div>
+            <div className={theme.stat}>
+              <div className={theme.name}>Total projects:</div>
+              <div className={theme.val}>{this.getProjectsAmountForCompany()}</div>
+            </div>
           </div>
         </div>
 
         <Accordeon>
           {open
-            ? <ExpandedJobInformation />
+            ? details.map((jobDetails, index) => (
+              <ExpandedJobInformation
+                jobDetails={jobDetails}
+                key={index}
+              />))
             : null}
         </Accordeon>
       </div>
     );
   }
+
+  private getProjectsAmountForCompany = () => this.props.job.details.length;
 }

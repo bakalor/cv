@@ -1,17 +1,28 @@
 import * as React from 'react';
 import * as theme from './theme.css';
-import { JobHistoryItem } from 'scenes/profile/components/job-history/item';
+import { JobHistoryItem } from 'scenes/profile/components/job-history/job-history-item';
 import { model } from 'model';
+import { JobHistoryHeader } from 'scenes/profile/components/job-history/header';
 
 export class JobHistory extends React.PureComponent {
   render() {
-    return <div className={theme.card}>
-      <div className={theme.header}>
-        <div className={theme.icon} />
-        <div className={theme.title}>Job history</div>
-      </div>
+    const {
+      jobHistory,
+    } = model;
 
-      {model.jobHistory.map((job, index) => <JobHistoryItem key={index} job={job} />)}
-    </div>;
+    return (
+      <div className={theme.card}>
+        <JobHistoryHeader />
+
+        {
+          jobHistory
+            .map((job, index) => (
+              <JobHistoryItem
+                key={index}
+                job={job} />
+            ))
+        }
+      </div>
+    );
   }
 }
