@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as theme from './theme.css';
 import * as cn from 'classnames';
 import { Job } from 'model/interfaces';
-import { Accordeon } from 'scenes/components/accordeon';
+import { Collapse } from 'react-collapse';
 import { ExpandedJobInformation } from 'scenes/profile/components/job-history/expanded-job-information';
 
 
@@ -52,15 +52,16 @@ export class JobHistoryItem extends React.PureComponent<{ job: Job }, { open: bo
           </div>
         </div>
 
-        <Accordeon>
-          {open
-            ? details.map((jobDetails, index) => (
+        <Collapse isOpened={open}>
+          {
+            details.map((jobDetails, index) => (
               <ExpandedJobInformation
                 jobDetails={jobDetails}
                 key={index}
-              />))
-            : null}
-        </Accordeon>
+              />
+            ))
+          }
+        </Collapse>
       </div>
     );
   }
