@@ -7,7 +7,7 @@ import { Collapse } from 'react-collapse';
 import {
   getTitleForRoute,
   getIconForRoute,
-} from 'scenes/components/sidebar/service';
+} from 'scenes/components/sidebar-content/service';
 
 
 interface ExternalProps {

@@ -3,7 +3,9 @@
 .screen-content-container {
   display: flex;
   justify-content: center;
-  padding: 0 var(--desktop-container-side-paddings);
+  padding: calc(var(--desktop-header-height) + var(--desktop-container-vertical-margins)) 
+            var(--desktop-container-side-paddings)
+            var(--desktop-container-vertical-margins)
+            var(--desktop-container-side-paddings);
   min-width: var(--desktop-container-min-width);
-  margin: var(--desktop-container-vertical-margins) 0;
 }
