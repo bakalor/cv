@@ -1,16 +1,24 @@
-import * as ReactDOM from 'react-dom';
 import * as React from 'react';
-import { App } from 'app';
+import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux'
+
+import { App } from 'app';
+import { store } from 'store/store';
+import { DeviceLayoutMonitor } from 'services';
 
 
 const render = (Component: any) =>
   ReactDOM.render(
-    <BrowserRouter>
-      <Component />
-    </BrowserRouter >,
+    <Provider store={store}>
+      <BrowserRouter>
+        <Component />
+      </BrowserRouter >
+    </Provider>,
     document.getElementById('app')
   );
+
+new DeviceLayoutMonitor().run();
 
 render(App);
 declare var module: any;

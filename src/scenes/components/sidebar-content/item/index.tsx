@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as theme from './theme.css';
-import { RoutingNodeDescriptor } from 'services/routing';
+import { RoutingNodeDescriptor } from 'services';
 import { NavLink } from 'react-router-dom';
 import { RouteComponentProps } from 'react-router';
 import { Collapse } from 'react-collapse';

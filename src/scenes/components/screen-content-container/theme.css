@@ -7,5 +7,4 @@
             var(--desktop-container-side-paddings)
             var(--desktop-container-vertical-margins)
             var(--desktop-container-side-paddings);
-  min-width: var(--desktop-container-min-width);
 }

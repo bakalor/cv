@@ -109,7 +109,7 @@ module.exports = {
   },
 
   devtool: dev
-    ? "cheap-module-eval-source-map"
+    ? "inline-source-map"
     : "nosources-source-map",
 
   plugins: [

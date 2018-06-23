@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as theme from './theme.css';
 import { SideBarHeader } from 'scenes/components/sidebar-content/header';
-import { routing } from 'services/routing';
+import { routing } from 'services';
 import { SidebarItem } from 'scenes/components/sidebar-content/item';
 import { SideBarFooter } from 'scenes/components/sidebar-content/footer';
 import { RouteComponentProps } from 'react-router';

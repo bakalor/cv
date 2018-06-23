@@ -5,3 +5,15 @@
   border: 1px solid #e5e5e5;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
 }
+
+@define-mixin laptop-layout {
+  @media only screen  and (max-width: 980px) {
+    @mixin-content;
+  }
+}
+
+@define-mixin mobile-layout {
+  @media only screen  and (max-width: 420px) {
+    @mixin-content;
+  }
+}

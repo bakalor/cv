@@ -56,8 +56,11 @@ export class ExpandedJobInformation extends React.PureComponent<PassedProps> {
   private renderGeneralInfoSection = (generalInfo: Item[]) => {
     return (
       <div className={theme.generalInfo}>
-        {generalInfo.map(generalInfoItem => (
-          <div className={theme.stat}>
+        {generalInfo.map((generalInfoItem, index) => (
+          <div
+            className={theme.stat}
+            key={index}
+          >
             <div className={theme.name}>
               {generalInfoItem.title}
             </div>

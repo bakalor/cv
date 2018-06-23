@@ -7,21 +7,34 @@ import {
   Route,
   Redirect,
 } from 'react-router';
+import { connect } from 'react-redux';
+import Sidebar from 'react-sidebar';
+
 import { SidebarContent } from 'scenes/components/sidebar-content';
 import { Header } from 'scenes/components/header';
-import { routing } from 'services/routing';
+import {
+  routing,
+} from 'services';
 import { Profile } from 'scenes/profile';
 import { Stack } from 'scenes/stack';
 import { ScreenContentContainer } from 'scenes/components/screen-content-container';
-import Sidebar from 'react-sidebar';
 
-class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
+import { AppState } from 'store/store';
+import { DeviceType } from 'store/layout/layout';
+
+interface ConnectedProps {
+  layout: DeviceType,
+}
+
+type Props = ConnectedProps & RouteComponentProps<{}>;
+
+class AppClass extends React.PureComponent<Props> {
+
   render() {
     return (
       <div className={core.root}>
         <Sidebar
-          open={true}
-          docked={true}
+          docked={this.props.layout === 'desktop'}
           sidebar={<SidebarContent {...this.props} />}
         >
           <Header />
@@ -39,4 +52,12 @@ class AppClass extends React.PureComponent<RouteComponentProps<{}>> {
   }
 }
 
-export const App = withRouter(AppClass);
+export const App = withRouter(
+  // TODO describe typing on module initialization layer
+  connect<{}, {}, {}, AppState>(
+    state => ({
+      layout: state.layout.deviceType
+    })
+  )
+    (AppClass)
+);

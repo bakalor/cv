@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as theme from './theme.css';
 import { Redirect, Switch, Route } from 'react-router';
-import { routing } from 'services/routing';
+import { routing } from 'services';
 import { FrontendStack } from 'scenes/stack/frontend';
 import { BackendStack } from 'scenes/stack/backend';
 

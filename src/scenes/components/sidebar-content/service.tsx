@@ -1,7 +1,11 @@
-import { RoutingNodeDescriptor, routing } from 'services/routing';
 import * as React from 'react';
-import * as theme from './theme.css';
 import * as cn from 'classnames';
+
+import {
+  RoutingNodeDescriptor,
+  routing,
+} from 'services';
+import * as theme from './theme.css';
 
 const routeToSidebarTitle = new Map<RoutingNodeDescriptor, React.ReactNode>([
   [routing.profile, 'Profile'],
