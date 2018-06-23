@@ -1,6 +1,8 @@
-import { DeviceType } from 'store/layout/layout';
-import { store } from 'store/store';
-import { layoutTypeHasChanged } from 'store/layout/actions/layout-type-has-changed';
+import {
+  DeviceType,
+  store,
+  layoutTypeHasChanged,
+} from 'store';
 
 const desktop = window.matchMedia(`only screen and (min-width: 981px)`);
 const laptop = window.matchMedia(`only screen and (max-width: 980px)`);

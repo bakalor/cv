@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 
 import { App } from 'app';
-import { store } from 'store/store';
+import { store } from 'store';
 import { DeviceLayoutMonitor } from 'services';
 
 

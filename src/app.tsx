@@ -19,8 +19,10 @@ import { Profile } from 'scenes/profile';
 import { Stack } from 'scenes/stack';
 import { ScreenContentContainer } from 'scenes/components/screen-content-container';
 
-import { AppState } from 'store/store';
-import { DeviceType } from 'store/layout/layout';
+import { 
+  AppState,
+  DeviceType,
+ } from 'store';
 
 interface ConnectedProps {
   layout: DeviceType,
