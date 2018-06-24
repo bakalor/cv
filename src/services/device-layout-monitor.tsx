@@ -34,13 +34,18 @@ export class DeviceLayoutMonitor {
   run() {
     const activeMedia = queries.find(query => query.matches)!;
     activeMedia.addListener(() => this.handleScreenDimensionsChange());
+    const activeDeviceType = queryToDeviceType.get(activeMedia)!;
+    
+    store.dispatch(layoutTypeHasChanged(activeDeviceType));
   }
 
   private handleScreenDimensionsChange() {
     const activeQuery = queries.find(query => query.matches)!;
     const activeDeviceType = queryToDeviceType.get(activeQuery)!;
 
-    store.dispatch(layoutTypeHasChanged(activeDeviceType))
+    store.dispatch(layoutTypeHasChanged(activeDeviceType));
   }
+
+
 
 }

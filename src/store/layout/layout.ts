@@ -5,16 +5,20 @@ import {
 import {
   LAYOUT_TYPE_HAS_CHANGED,
   LayoutTypeHasChanged,
-} from './actions/layout-type-has-changed';
+  OPEN_SIDEBAR,
+  CLOSE_SIDEBAR,
+} from './actions';
 
 export type DeviceType = 'mobile' | 'laptop' | 'desktop';
 
 export interface LayoutState {
   deviceType: DeviceType;
+  sidebarIsOpened: boolean;
 }
 
 const initialState: LayoutState = {
   deviceType: 'desktop',
+  sidebarIsOpened: false,
 }
 
 export const layoutReducer: Reducer<LayoutState, AnyAction> = (state, action) => {
@@ -27,10 +31,22 @@ export const layoutReducer: Reducer<LayoutState, AnyAction> = (state, action) =>
 
   switch (action.type) {
     case LAYOUT_TYPE_HAS_CHANGED:
-      const actionCasted = action as LayoutTypeHasChanged;
+      action = action as LayoutTypeHasChanged;
       return {
         ...state,
-        deviceType: actionCasted.payload.newLayoutType,
+        deviceType: action.payload.newLayoutType,
+      }
+
+    case OPEN_SIDEBAR:
+      return {
+        ...state,
+        sidebarIsOpened: true,
+      }
+
+    case CLOSE_SIDEBAR:
+      return {
+        ...state,
+        sidebarIsOpened: false,
       }
 
     default:

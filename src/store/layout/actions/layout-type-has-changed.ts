@@ -1,6 +1,7 @@
 import {
   AnyAction,
 } from 'redux';
+
 import { DeviceType } from '../layout';
 
 export const LAYOUT_TYPE_HAS_CHANGED = '@layout/LAYOUT_TYPE_HAS_CHANGED'

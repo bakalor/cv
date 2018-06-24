@@ -11,6 +11,16 @@
   right: 0;
   background-color: var(--bg-color);
   box-shadow: 0 2px 5px rgba(0, 0, 0, .26);
-  z-index: 1;
   height: var(--desktop-header-height);
+
+  & .menu {
+    height: var(--desktop-header-height);
+    width: var(--desktop-header-height);
+    cursor: pointer;
+    background-color: var(--bg-color);
+    background-image: url(./menu.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: calc(var(--desktop-header-height) / 2);
+  }
 }

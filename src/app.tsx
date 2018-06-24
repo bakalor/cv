@@ -22,13 +22,20 @@ import { ScreenContentContainer } from 'scenes/components/screen-content-contain
 import { 
   AppState,
   DeviceType,
+  CloseSidebarCreator,
+  closeSidebar,
  } from 'store';
 
 interface ConnectedProps {
   layout: DeviceType,
+  sidebarIsOpened: boolean,
 }
 
-type Props = ConnectedProps & RouteComponentProps<{}>;
+interface ConnectedActions {
+  closeSidebar: CloseSidebarCreator;
+}
+
+type Props = ConnectedProps & ConnectedActions &  RouteComponentProps<{}>;
 
 class AppClass extends React.PureComponent<Props> {
 
@@ -37,7 +44,9 @@ class AppClass extends React.PureComponent<Props> {
       <div className={core.root}>
         <Sidebar
           docked={this.props.layout === 'desktop'}
+          open={this.props.sidebarIsOpened}
           sidebar={<SidebarContent {...this.props} />}
+          onSetOpen={this.onSidebarSetOpen}
         >
           <Header />
 
@@ -52,14 +61,24 @@ class AppClass extends React.PureComponent<Props> {
       </div>
     );
   }
+
+  private onSidebarSetOpen = (sidebarState: boolean) => {
+    if(!sidebarState) {
+      this.props.closeSidebar()
+    }
+  }
 }
 
 export const App = withRouter(
   // TODO describe typing on module initialization layer
-  connect<{}, {}, {}, AppState>(
+  connect<ConnectedProps, ConnectedActions, {}, AppState>(
     state => ({
-      layout: state.layout.deviceType
-    })
+      layout: state.layout.deviceType,
+      sidebarIsOpened: state.layout.sidebarIsOpened,
+    }),
+    {
+      closeSidebar,
+    }
   )
     (AppClass)
 );
