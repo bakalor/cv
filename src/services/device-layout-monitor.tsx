@@ -12,7 +12,7 @@ const queries = [
   mobile,
   laptop,
   desktop,
-]
+];
 
 const queryToDeviceType = new Map<MediaQueryList, DeviceType>([
   [
@@ -27,7 +27,7 @@ const queryToDeviceType = new Map<MediaQueryList, DeviceType>([
     mobile,
     'mobile',
   ],
-])
+]);
 
 export class DeviceLayoutMonitor {
 
@@ -35,7 +35,7 @@ export class DeviceLayoutMonitor {
     const activeMedia = queries.find(query => query.matches)!;
     activeMedia.addListener(() => this.handleScreenDimensionsChange());
     const activeDeviceType = queryToDeviceType.get(activeMedia)!;
-    
+
     store.dispatch(layoutTypeHasChanged(activeDeviceType));
   }
 
@@ -45,7 +45,6 @@ export class DeviceLayoutMonitor {
 
     store.dispatch(layoutTypeHasChanged(activeDeviceType));
   }
-
 
 
 }

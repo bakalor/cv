@@ -14,11 +14,11 @@ import {
 } from './layout/layout';
 
 export interface AppState {
-  layout: LayoutState,
+  layout: LayoutState;
 }
 const appReducer = combineReducers({
   layout: layoutReducer
-})
+});
 
 export const store = createStore<AppState, AnyAction, {}, {}>(
   appReducer,

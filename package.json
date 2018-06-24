@@ -4,11 +4,11 @@
   "description": "cv project",
   "main": "index.js",
   "scripts": {
-    "start": "run-p start:*",
+    "start": "npm run cleanup && run-p start:*",
     "start:server": "nodemon --nolazy --watch src ./src/server/index.js",
     "start:client": "webpack -w",
-    "format:css": "stylefmt -r src/**/*.css",
-    "build": "cross-env NODE_ENV=production webpack",
+    "cleanup": "rm -rf ./dist",
+    "build": "npm run cleanup && cross-env NODE_ENV=production webpack",
     "stylefix:ts": "tslint --project ./tsconfig.json --config ./tslint.json --fix ./src/**/*.ts ./src/**/*.tsx"
   },
   "repository": {
@@ -55,7 +55,6 @@
     "@types/redux": "^3.6.0",
     "@types/redux-devtools-extension": "^2.13.2",
     "awesome-typescript-loader": "^3.5.0",
-    "clean-webpack-plugin": "^0.1.17",
     "cross-env": "^5.1.6",
     "css-loader": "^0.28.11",
     "express": "^4.16.3",
@@ -76,6 +75,7 @@
     "stylelint-config-recommended": "^2.0.1",
     "tslint": "^5.10.0",
     "typescript": "^2.9.1",
+    "uglifyjs-webpack-plugin": "^1.2.6",
     "url-loader": "^0.5.9",
     "webpack": "^3.12.0",
     "webpack-dev-middleware": "^1.12.2",

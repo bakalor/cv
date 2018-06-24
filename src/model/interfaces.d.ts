@@ -14,7 +14,7 @@ export interface Job {
   period: string;
   position: string;
   logoClass: string;
-  details: JobDetails[]
+  details: JobDetails[];
 }
 
 export interface JobDetails {

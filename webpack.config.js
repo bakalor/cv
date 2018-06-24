@@ -1,9 +1,10 @@
 const path = require("path");
 const webpack = require("webpack");
 const { TsConfigPathsPlugin } = require("awesome-typescript-loader");
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -124,9 +125,10 @@ module.exports = {
   ].concat(dev
     ? [
       new webpack.HotModuleReplacementPlugin(),
-      new CleanWebpackPlugin("./dist"),
     ]
-    : []),
+    : [
+      new UglifyJsPlugin(),
+    ]),
 
   stats: {
     children: false
