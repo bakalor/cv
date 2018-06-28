@@ -1,4 +1,5 @@
 @import "variables.css";
+@import "mixins/layout.css";
 
 .screen-content-container {
   display: flex;
@@ -7,4 +8,10 @@
             var(--desktop-container-side-paddings)
             var(--desktop-container-vertical-margins)
             var(--desktop-container-side-paddings);
+}
+
+@mixin mobile-layout {
+  .screen-content-container {
+    padding: var(--desktop-header-height) 0 var(--desktop-container-vertical-margins) 0;
+  }
 }

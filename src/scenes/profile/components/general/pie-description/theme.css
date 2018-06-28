@@ -1,0 +1,28 @@
+.chart-desc {
+  flex-grow: 1;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  padding: 12px 12px 12px 35px;
+  line-height: 19px;
+  background: #fffcdd;
+  border: 1px dashed #e0e0e0;
+
+  & .icon {
+    position: absolute;
+    height: 16px;
+    width: 15px;
+    content: "";
+    background-image: url(./question.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+  }
+
+  & .link {
+    color: #447bc6;
+  }
+}

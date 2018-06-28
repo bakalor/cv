@@ -9,5 +9,6 @@ module.exports = {
     require("postcss-mixins")(),
     require("postcss-cssnext")({
       brouserlist: ["last 2 versions"],
-    })],
+    }),
+  ],
 };

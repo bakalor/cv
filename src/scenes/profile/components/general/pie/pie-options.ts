@@ -4,7 +4,7 @@
 */
 export const pieOptions = {
   size: {
-    canvasWidth: 400,
+    canvasWidth: 320,
     canvasHeight: 320,
     pieOuterRadius: 150,
     pieInnerRadius: 20

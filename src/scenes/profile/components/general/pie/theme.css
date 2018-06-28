@@ -1,84 +1,25 @@
 @import "mixins/layout";
 @import "mixins/lists";
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 22px;
-  text-align: center;
-  font-weight: 700;
-  text-align: left;
-  margin-bottom: 15px;
-}
-
 .pie {
   width: 400px;
   height: 320px;
-  border-radius: 4px;
   margin-bottom: 10px;
+  margin: 0 auto;
 
   & > svg {
     overflow: visible;
   }
 }
 
-.legend {
-  display: flex;
-  width: 100%;
+@mixin mobile-layout {
+  .pie {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 10px;
 
-  & .col {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-
-    &:last-child {
-      & .item {
-        flex-direction: row-reverse;
-
-        & .icon {
-          margin-left: 10px;
-          margin-right: 0;
-        }
-      }
-    }
-  }
-
-  & .item {
-    font-size: 14px;
-    padding: 4px 16px;
-    font-weight: 600;
-    align-items: center;
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-
-    & .icon {
-      height: 10px;
-      width: 10px;
-      content: "";
-      margin-right: 10px;
-      border-radius: 50%;
-
-      &.linear {
-        background-color: #00838f;
-      }
-
-      &.dealer {
-        background-color: #1976d2;
-      }
-
-      &.rockstar {
-        background-color: #01579b;
-      }
-
-      &.bussines {
-        background-color: #0d47a1;
-      }
+    & > svg {
+      overflow: visible;
     }
   }
 }

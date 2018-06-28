@@ -1,44 +1,54 @@
-import * as cn from 'classnames';
 import * as React from 'react';
 import * as d3pie from 'd3pie';
+import {connect} from 'react-redux';
 import { pieOptions } from 'scenes/profile/components/general/pie/pie-options';
 import * as theme from './theme.css';
+import { DeviceType, AppState } from 'store';
+import { ProgrammerTypeChartLegend } from './legend';
 
+interface ConnectedProps {
+  deviceType: DeviceType;
+}
 
-export class Pie extends React.PureComponent {
-  
+type Props = ConnectedProps;
+
+export class PieClass extends React.PureComponent<Props> {
+
   private _chart?: HTMLElement;
 
   componentDidMount() {
-    new d3pie(this._chart!, (pieOptions as any));
+    const {
+      deviceType,
+    } = this.props;
+
+    let processedOptions = pieOptions;
+
+    if(deviceType === 'mobile') {
+      processedOptions = {
+        ...pieOptions,
+        size: {
+          canvasWidth: 300,
+          canvasHeight: 300,
+          pieOuterRadius: 140,
+          pieInnerRadius: 20
+        }
+      }
+    }
+
+    new d3pie(this._chart!, (processedOptions as any));
   }
 
   render() {
-    return <div className={theme.wrapper}>
-      <div className={theme.title}>Programmer type chart</div>
+    return <div>
+    
       <div className={theme.pie} ref={r => this._chart = r!} />
-      <div className={theme.legend}>
-        <div className={theme.col}>
-          <div className={theme.item}>
-            <div className={cn(theme.icon, theme.linear)} />
-            <div className={theme.name}>Linear Programmer</div>
-          </div>
-          <div className={theme.item}>
-            <div className={cn(theme.icon, theme.dealer)} />
-            <div className={theme.name}>Dealer</div>
-          </div>
-        </div>
-        <div className={theme.col}>
-          <div className={theme.item}>
-            <div className={cn(theme.icon, theme.bussines)} />
-            <div className={theme.name}>Business Bullshitter</div>
-          </div>
-          <div className={theme.item}>
-            <div className={cn(theme.icon, theme.rockstar)} />
-            <div className={theme.name}>Rockstar</div>
-          </div>
-        </div>
-      </div>
+      <ProgrammerTypeChartLegend />
     </div>;
   }
 }
+
+export const Pie = connect<ConnectedProps, {}, {}, AppState>(
+  state => ({
+    deviceType: state.layout.deviceType,
+  })
+)(PieClass)

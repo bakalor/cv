@@ -4,13 +4,26 @@ import {
   layoutTypeHasChanged,
 } from 'store';
 
-const desktop = window.matchMedia(`only screen and (min-width: 981px)`);
-const laptop = window.matchMedia(`only screen and (max-width: 980px)`);
-const mobile = window.matchMedia(`only screen and (max-width: 420px)`);
+const DESKTOP_SIDE_MARGIN = 20;
+const PROFILE_CARD_DESKTOP_WIDTH = 940;
+const SIDEBAR_WIDTH = 256;
+
+const DESKTOP_LAYOUT_WIDTH_CONDITION = PROFILE_CARD_DESKTOP_WIDTH + 2 * DESKTOP_SIDE_MARGIN + SIDEBAR_WIDTH;
+const MOBILE_LAYOUT_WIDTH_CONDITION = 420;
+
+const desktop = window.matchMedia(
+  `only screen and (min-width: ${DESKTOP_LAYOUT_WIDTH_CONDITION}px)`
+);
+const desktopNoSidebar = window.matchMedia(
+  `only screen and (max-width: ${DESKTOP_LAYOUT_WIDTH_CONDITION - 1}px)`
+);
+const mobile = window.matchMedia(
+  `only screen and (max-width: ${MOBILE_LAYOUT_WIDTH_CONDITION}px)`
+);
 
 const queries = [
   mobile,
-  laptop,
+  desktopNoSidebar,
   desktop,
 ];
 
@@ -20,7 +33,7 @@ const queryToDeviceType = new Map<MediaQueryList, DeviceType>([
     'desktop',
   ],
   [
-    laptop,
+    desktopNoSidebar,
     'laptop',
   ],
   [

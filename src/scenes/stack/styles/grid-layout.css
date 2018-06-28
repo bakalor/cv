@@ -14,7 +14,7 @@
   }
 }
 
-@mixin laptop-layout {
+@mixin mobile-layout {
   .grid {
     flex-direction: column;
     align-items: center;

@@ -1,19 +1,30 @@
+@import 'variables.css';
+
 @define-mixin card {
   background-color: white;
   border-radius: 2px;
   
   border: 1px solid #e5e5e5;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 0px 2px 2px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.12), 
+              0px 2px 2px 0px rgba(0, 0, 0, 0.14);
 }
 
-@define-mixin laptop-layout {
-  @media only screen  and (max-width: 980px) {
+/**
+ profile-card-width + 2*side-margin + sidebar-width
+ 940px + 20px + 20px + 256px
+*/
+@custom-media --desktop-layout-condition (min-width: 1236px);
+
+@custom-media --mobile-layout-condition (max-width: 420px);
+
+@define-mixin desktop-layout {
+  @media only screen and  (--desktop-layout-condition) {
     @mixin-content;
   }
 }
 
 @define-mixin mobile-layout {
-  @media only screen  and (max-width: 420px) {
+  @media only screen  and (--mobile-layout-condition) {
     @mixin-content;
   }
 }
